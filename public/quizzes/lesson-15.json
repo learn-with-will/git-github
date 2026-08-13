@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-15",
+  "lessonId": "lesson-15",
+  "title": "Issues, Labels, Milestones & Projects",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What are GitHub Issues primarily used for?",
+      "options": [
+        { "id": "a", "text": "Storing the repository's source code" },
+        { "id": "b", "text": "Tracking bugs, tasks, feature requests, and questions" },
+        { "id": "c", "text": "Authenticating to GitHub" },
+        { "id": "d", "text": "Running automated tests" }
+      ],
+      "answer": "b",
+      "explanation": "Issues track units of work and discussion — bugs, tasks, feature requests, questions — with labels, assignees, and milestones attached."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which will automatically close issue #12 when the pull request merges?",
+      "options": [
+        { "id": "a", "text": "Writing 'see #12' in the description" },
+        { "id": "b", "text": "Writing 'Fixes #12' in the PR description" },
+        { "id": "c", "text": "Adding the 'bug' label" },
+        { "id": "d", "text": "Assigning the issue to yourself" }
+      ],
+      "answer": "b",
+      "explanation": "A closing keyword (Fixes/Closes/Resolves) plus the issue number auto-closes the issue on merge. A bare mention like 'see #12' only creates a link."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Labels categorize issues and pull requests" },
+        { "id": "b", "text": "Milestones group issues toward a goal or release" },
+        { "id": "c", "text": "Projects provide boards and tables to organize work" },
+        { "id": "d", "text": "Only the repository owner can ever open an issue" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Labels categorize, milestones group toward goals, and Projects organize work visually. Anyone with access (and the public, on open repos) can open issues."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "Writing '______ #12' in a pull request will auto-close issue 12 when it merges. (give one recognized keyword)",
+      "answer": ["Fixes", "fixes", "Closes", "closes", "Resolves", "resolves"],
+      "explanation": "Recognized closing keywords include Fixes, Closes, and Resolves (and their variants). Any of them followed by the issue number auto-closes it on merge."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You merged a PR that fixes a bug, but the linked issue stayed open. What's the most likely reason?",
+      "options": [
+        { "id": "a", "text": "The repository is private" },
+        { "id": "b", "text": "The PR didn't use a closing keyword to link the issue" },
+        { "id": "c", "text": "Issues can only be closed manually" },
+        { "id": "d", "text": "You used squash and merge" }
+      ],
+      "answer": "b",
+      "explanation": "Auto-close requires a recognized closing keyword (e.g. Fixes #N). Without one, the issue isn't closed automatically even though the fix merged."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each item to what it is.",
+      "pairs": [
+        { "left": "Issue", "right": "A tracked task, bug, or request" },
+        { "left": "Label", "right": "A category tag" },
+        { "left": "Milestone", "right": "A group of items toward a release" },
+        { "left": "Project", "right": "A board/table to organize work" }
+      ],
+      "explanation": "Issues are the items, labels categorize them, milestones group them toward a goal, and Projects visualize the workflow."
+    }
+  ]
+}

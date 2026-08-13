@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-13",
+  "lessonId": "lesson-13",
+  "title": "Rebasing",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does `git rebase <base>` do?",
+      "options": [
+        { "id": "a", "text": "Deletes your branch's commits" },
+        { "id": "b", "text": "Reapplies your branch's commits on top of <base> as new commits, giving a linear history" },
+        { "id": "c", "text": "Creates a merge commit joining two branches" },
+        { "id": "d", "text": "Uploads your branch to the remote" }
+      ],
+      "answer": "b",
+      "explanation": "Rebase replays your commits onto a new base, creating new commits (new hashes) and a straight-line history — unlike merge, which adds a merge commit."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What is the Golden Rule of Rebasing?",
+      "options": [
+        { "id": "a", "text": "Always rebase before every commit" },
+        { "id": "b", "text": "Never rebase commits that exist outside your repository (shared/pushed history)" },
+        { "id": "c", "text": "Only rebase on Fridays" },
+        { "id": "d", "text": "Rebase main into every branch daily" }
+      ],
+      "answer": "b",
+      "explanation": "Because rebasing rewrites commits, doing it to commits others may already have breaks their history. Rebase private branches; leave shared history alone."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which are things interactive rebase (git rebase -i) can do? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Squash several commits into one" },
+        { "id": "b", "text": "Reword a commit message" },
+        { "id": "c", "text": "Reorder or drop commits" },
+        { "id": "d", "text": "Rewrite history while keeping all the original commit hashes" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Interactive rebase can squash, reword, reorder, edit, and drop commits — but any change rewrites the commits, so the hashes change."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To start an interactive rebase of the last three commits, run: git rebase -__ HEAD~3",
+      "answer": ["i"],
+      "explanation": "git rebase -i HEAD~3 opens the interactive editor listing the last three commits for you to pick/squash/reword/drop."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You rebased your own feature branch that was already pushed, and now `git push` is rejected. What's the safe way to update the remote branch?",
+      "options": [
+        { "id": "a", "text": "git push --force (unconditionally overwrite)" },
+        { "id": "b", "text": "git push --force-with-lease (refuses if the remote changed unexpectedly)" },
+        { "id": "c", "text": "git pull, which will duplicate the commits" },
+        { "id": "d", "text": "Delete the remote repository" }
+      ],
+      "answer": "b",
+      "explanation": "--force-with-lease updates your rebased branch but refuses if someone else pushed new commits you haven't seen — a safer force. Use it only on your own branch, never on shared branches like main."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each interactive-rebase action to its effect.",
+      "pairs": [
+        { "left": "pick", "right": "Keep the commit as-is" },
+        { "left": "squash", "right": "Combine into the previous commit" },
+        { "left": "reword", "right": "Keep the commit but change its message" },
+        { "left": "drop", "right": "Remove the commit entirely" }
+      ],
+      "explanation": "pick keeps, squash combines with the prior commit, reword edits the message, and drop deletes the commit."
+    }
+  ]
+}

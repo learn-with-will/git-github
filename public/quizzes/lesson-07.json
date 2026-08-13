@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-07",
+  "lessonId": "lesson-07",
+  "title": "Merging & Conflicts",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "When can Git perform a fast-forward merge?",
+      "options": [
+        { "id": "a", "text": "Whenever you pass the --ff flag" },
+        { "id": "b", "text": "When the current branch hasn't diverged, so the pointer just moves forward" },
+        { "id": "c", "text": "Only when there is a conflict" },
+        { "id": "d", "text": "When both branches changed the same lines" }
+      ],
+      "answer": "b",
+      "explanation": "If the target branch has no commits the other lacks, Git simply advances its pointer to the tip — a fast-forward, with no merge commit."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "How many parents does a merge commit have?",
+      "options": [
+        { "id": "a", "text": "Zero" },
+        { "id": "b", "text": "One" },
+        { "id": "c", "text": "Two (or more)" },
+        { "id": "d", "text": "It depends on the number of files changed" }
+      ],
+      "answer": "c",
+      "explanation": "A merge commit records two (or more) parents — one for each branch being combined — which is what distinguishes it from an ordinary commit."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about merge conflicts are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "They occur when both branches change the same lines differently" },
+        { "id": "b", "text": "Git marks them with <<<<<<<, =======, and >>>>>>>" },
+        { "id": "c", "text": "You resolve them, then git add and commit" },
+        { "id": "d", "text": "Git always resolves every conflict for you automatically" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Overlapping changes cause conflicts, Git brackets the competing versions with markers, and you finish by staging and committing. Git cannot decide overlapping changes for you."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To cancel an in-progress merge and return to the previous state, run: git merge --______",
+      "answer": ["abort"],
+      "explanation": "git merge --abort restores the repository to exactly how it was before you started the merge."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "A three-way merge combines which three commits?",
+      "options": [
+        { "id": "a", "text": "The first, middle, and last commits of the branch" },
+        { "id": "b", "text": "The two branch tips and their common ancestor" },
+        { "id": "c", "text": "Three consecutive commits on main" },
+        { "id": "d", "text": "The local, staged, and committed versions" }
+      ],
+      "answer": "b",
+      "explanation": "A three-way merge uses the two branch tips plus their common ancestor (the merge base) to work out how to combine the changes."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each term to its meaning.",
+      "pairs": [
+        { "left": "Fast-forward", "right": "Pointer moves ahead; no merge commit" },
+        { "left": "Three-way merge", "right": "Merge commit from two tips + common ancestor" },
+        { "left": "Conflict markers", "right": "<<<<<<< ======= >>>>>>>" },
+        { "left": "git merge --abort", "right": "Undo an in-progress merge" }
+      ],
+      "explanation": "Fast-forward avoids a merge commit, a three-way merge creates one, the markers bracket competing versions, and --abort backs out."
+    }
+  ]
+}

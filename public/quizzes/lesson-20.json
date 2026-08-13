@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-20",
+  "lessonId": "lesson-20",
+  "title": "Submodules & Git LFS",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does a submodule record in the parent repository?",
+      "options": [
+        { "id": "a", "text": "A full copy of the other repository's files" },
+        { "id": "b", "text": "A link to another repository at a specific commit (URL + pinned commit)" },
+        { "id": "c", "text": "Only the other repo's latest branch name" },
+        { "id": "d", "text": "Nothing — submodules are just folders" }
+      ],
+      "answer": "b",
+      "explanation": "The parent stores the submodule's URL (in .gitmodules) and a pointer to a specific commit — not the submodule's actual contents."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does Git LFS do?",
+      "options": [
+        { "id": "a", "text": "Compresses your entire repository" },
+        { "id": "b", "text": "Replaces large files with small pointer files, storing the content on a separate LFS server" },
+        { "id": "c", "text": "Encrypts large files" },
+        { "id": "d", "text": "Deletes large files from the working tree" }
+      ],
+      "answer": "b",
+      "explanation": "Git LFS commits a tiny pointer in place of each large file and keeps the real bytes on an LFS server, so the Git repo stays small and fast."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "git clone --recurse-submodules fetches submodule contents" },
+        { "id": "b", "text": "A submodule is pinned to a specific commit" },
+        { "id": "c", "text": "Git LFS keeps large binaries out of the main repo history via pointers" },
+        { "id": "d", "text": "Submodules automatically update to the latest upstream commit" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Recursive clone fetches submodule contents, submodules are pinned to a commit, and LFS uses pointers. Submodules do NOT auto-update — you bump and commit the new pointer yourself."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To clone a repository and fetch its submodules in one step: git clone --recurse-__________ <url>",
+      "answer": ["submodules"],
+      "explanation": "git clone --recurse-submodules clones the repo and checks out each submodule at its pinned commit."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You cloned a project and its `libs/` submodule folder is empty. Why?",
+      "options": [
+        { "id": "a", "text": "The submodule was deleted upstream" },
+        { "id": "b", "text": "You cloned without --recurse-submodules (or didn't run git submodule update --init)" },
+        { "id": "c", "text": "Submodules can't be cloned at all" },
+        { "id": "d", "text": "The folder is hidden" }
+      ],
+      "answer": "b",
+      "explanation": "A plain clone brings only the pointer to the submodule commit, not its files. Use --recurse-submodules or git submodule update --init --recursive to populate it."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each item to its role.",
+      "pairs": [
+        { "left": "Submodule", "right": "A repo pinned inside another at a commit" },
+        { "left": ".gitmodules", "right": "Records submodule paths and URLs" },
+        { "left": "Git LFS", "right": "Pointer files for large binaries" },
+        { "left": "git lfs track", "right": "Set which file patterns LFS manages" }
+      ],
+      "explanation": "A submodule pins a nested repo, .gitmodules records it, LFS stores large files as pointers, and git lfs track configures the patterns."
+    }
+  ]
+}

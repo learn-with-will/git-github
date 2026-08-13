@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-06",
+  "lessonId": "lesson-06",
+  "title": "Branching Basics",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is a branch in Git?",
+      "options": [
+        { "id": "a", "text": "A full copy of your project files" },
+        { "id": "b", "text": "A lightweight, movable pointer to a commit" },
+        { "id": "c", "text": "A snapshot of the staging area" },
+        { "id": "d", "text": "A backup stored on GitHub" }
+      ],
+      "answer": "b",
+      "explanation": "A branch is just a small movable pointer to a commit. Creating one copies nothing, which is why branching is instant."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does HEAD normally point to?",
+      "options": [
+        { "id": "a", "text": "The oldest commit in the repository" },
+        { "id": "b", "text": "The remote server" },
+        { "id": "c", "text": "The branch you currently have checked out" },
+        { "id": "d", "text": "The staging area" }
+      ],
+      "answer": "c",
+      "explanation": "HEAD is the pointer to your current branch — 'you are here'. When you commit, the branch HEAD points to advances."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about branches are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Creating a branch does not copy your files" },
+        { "id": "b", "text": "git switch -c creates a branch and switches to it" },
+        { "id": "c", "text": "Branches are cheap because they are just pointers" },
+        { "id": "d", "text": "git branch <name> switches you onto the new branch" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Branches are pointers (no copying, cheap), and switch -c both creates and switches. git branch <name> only creates the branch — you still need git switch to move onto it."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To create and switch to a branch named feature in one command: git switch -__ feature",
+      "answer": ["c"],
+      "explanation": "git switch -c feature creates the branch and switches to it. (The older equivalent is git checkout -b feature.)"
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You checked out a specific commit hash, made commits, and Git warned about a 'detached HEAD'. What's the risk?",
+      "options": [
+        { "id": "a", "text": "The commits are uploaded to GitHub automatically" },
+        { "id": "b", "text": "The commits belong to no branch and can be lost when you switch away" },
+        { "id": "c", "text": "Your working tree is now read-only" },
+        { "id": "d", "text": "The main branch is deleted" }
+      ],
+      "answer": "b",
+      "explanation": "In detached HEAD, HEAD points at a commit rather than a branch, so new commits are unreferenced. Create a branch (git switch -c) to keep them."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each command to what it does.",
+      "pairs": [
+        { "left": "git branch", "right": "List the branches" },
+        { "left": "git branch <name>", "right": "Create a branch without switching" },
+        { "left": "git switch <name>", "right": "Move onto an existing branch" },
+        { "left": "git switch -c <name>", "right": "Create a branch and switch to it" }
+      ],
+      "explanation": "git branch lists or creates; git switch moves; switch -c creates and moves in one step."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-09",
+  "lessonId": "lesson-09",
+  "title": "Meet GitHub: Repositories & Authentication",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "How is GitHub best described, relative to Git?",
+      "options": [
+        { "id": "a", "text": "It is the version-control tool that replaces Git" },
+        { "id": "b", "text": "It is a service that hosts Git repositories and adds collaboration features" },
+        { "id": "c", "text": "It is a different command-line program you install instead of Git" },
+        { "id": "d", "text": "It is a text editor for writing commits" }
+      ],
+      "answer": "b",
+      "explanation": "GitHub hosts Git repositories and layers on collaboration features (PRs, issues, reviews). Git is the underlying version-control tool."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Over HTTPS, what do you use to authenticate Git operations with GitHub?",
+      "options": [
+        { "id": "a", "text": "Your GitHub account password" },
+        { "id": "b", "text": "A Personal Access Token (or a credential manager that stores it)" },
+        { "id": "c", "text": "Your email address" },
+        { "id": "d", "text": "No authentication is needed" }
+      ],
+      "answer": "b",
+      "explanation": "GitHub removed account-password authentication for Git operations in 2021. Over HTTPS you supply a Personal Access Token, often stored by a credential manager."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about GitHub authentication are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "SSH authentication uses a key pair" },
+        { "id": "b", "text": "You add the public key to GitHub, keeping the private key secret" },
+        { "id": "c", "text": "A Personal Access Token can stand in for a password over HTTPS" },
+        { "id": "d", "text": "You should commit your token into the repository for convenience" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "SSH uses a key pair (public on GitHub, private secret), and a PAT replaces a password over HTTPS. Committing a token exposes it — never do that."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To connect a local repository to a GitHub remote named origin, run: git remote ___ origin <url>",
+      "answer": ["add"],
+      "explanation": "git remote add origin <url> registers the GitHub URL under the name origin so you can push and pull."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You clone over HTTPS and enter your GitHub account password when prompted, but it fails. Why?",
+      "options": [
+        { "id": "a", "text": "The repository is private" },
+        { "id": "b", "text": "GitHub removed password authentication for Git operations; use a token or SSH" },
+        { "id": "c", "text": "You must be on the same network as GitHub" },
+        { "id": "d", "text": "Passwords only work for git pull, not git clone" }
+      ],
+      "answer": "b",
+      "explanation": "Since 2021, account passwords aren't accepted for Git operations. The prompt says 'Password' but expects a Personal Access Token (or use SSH keys)."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each item to its role.",
+      "pairs": [
+        { "left": "HTTPS + PAT", "right": "Token acts as the password" },
+        { "left": "SSH", "right": "Key pair; public key on GitHub" },
+        { "left": "git remote add", "right": "Link a local repo to a remote" },
+        { "left": "git clone", "right": "Download a repo and set up origin" }
+      ],
+      "explanation": "A PAT authenticates HTTPS, SSH uses key pairs, remote add links a remote, and clone copies a repo while configuring origin."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-23",
+  "lessonId": "lesson-23",
+  "title": "Guarding main: Branch Protection, Reviews & Hooks",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What do branch protection rules do?",
+      "options": [
+        { "id": "a", "text": "Encrypt the branch" },
+        { "id": "b", "text": "Enforce conditions before changes reach a branch (e.g. require a PR, approvals, passing checks) on the server, so contributors can't bypass them" },
+        { "id": "c", "text": "Automatically write tests for you" },
+        { "id": "d", "text": "Make the branch read-only to everyone forever" }
+      ],
+      "answer": "b",
+      "explanation": "Branch protection is a server-side gate: it can require pull requests, reviews, and passing status checks, and block force-pushes — rules contributors cannot skip."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "When does a pre-commit hook run?",
+      "options": [
+        { "id": "a", "text": "On the server after a push" },
+        { "id": "b", "text": "Locally, before a commit is created — and it can abort the commit" },
+        { "id": "c", "text": "Only when merging a pull request" },
+        { "id": "d", "text": "Once per day automatically" }
+      ],
+      "answer": "b",
+      "explanation": "A pre-commit hook runs on your machine just before the commit is created; if it exits non-zero (e.g. lint fails), the commit is aborted."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Branch protection can require passing status checks before merge" },
+        { "id": "b", "text": "A CODEOWNERS file can require review from specific owners" },
+        { "id": "c", "text": "Client-side hooks can be bypassed with --no-verify" },
+        { "id": "d", "text": "Client-side hooks are automatically shared with everyone who clones" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Branch protection can require green checks, CODEOWNERS routes required reviews, and hooks can be skipped with --no-verify. Hooks in .git/hooks are local and NOT shared by cloning."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "A ______ file maps paths to the people whose review is required for changes there.",
+      "answer": ["CODEOWNERS", "codeowners"],
+      "explanation": "A CODEOWNERS file assigns owners to file paths, so PRs touching those paths require the owners' review."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Why are client-side pre-commit hooks NOT a reliable enforcement mechanism?",
+      "options": [
+        { "id": "a", "text": "They only run on Windows" },
+        { "id": "b", "text": "They are local, not shared by default, and can be skipped with --no-verify" },
+        { "id": "c", "text": "They require a paid GitHub plan" },
+        { "id": "d", "text": "They delete your commits" }
+      ],
+      "answer": "b",
+      "explanation": "Hooks live locally, don't travel with a clone unless installed, and can be bypassed with --no-verify. True enforcement needs server-side branch protection and required CI."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each mechanism to what it is.",
+      "pairs": [
+        { "left": "Branch protection", "right": "Server-side rules guarding a branch" },
+        { "left": "Required reviews", "right": "PRs need approvals before merge" },
+        { "left": "CODEOWNERS", "right": "Maps paths to required reviewers" },
+        { "left": "pre-commit hook", "right": "Local script run before a commit" }
+      ],
+      "explanation": "Branch protection enforces server-side, required reviews gate merges, CODEOWNERS routes reviewers, and a pre-commit hook gives local pre-commit feedback."
+    }
+  ]
+}

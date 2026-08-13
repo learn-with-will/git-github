@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-05",
+  "lessonId": "lesson-05",
+  "title": "Undoing Things",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does `git revert <commit>` do?",
+      "options": [
+        { "id": "a", "text": "Deletes the commit from history" },
+        { "id": "b", "text": "Creates a new commit that undoes the target commit's changes" },
+        { "id": "c", "text": "Moves the branch pointer back to before the commit" },
+        { "id": "d", "text": "Discards all uncommitted work" }
+      ],
+      "answer": "b",
+      "explanation": "revert adds a new commit applying the inverse of the target, undoing its effect while leaving history intact — which is why it's safe on shared branches."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which `git reset` mode changes your working-tree files (and can discard uncommitted work)?",
+      "options": [
+        { "id": "a", "text": "--soft" },
+        { "id": "b", "text": "--mixed" },
+        { "id": "c", "text": "--hard" },
+        { "id": "d", "text": "None of them touch the working tree" }
+      ],
+      "answer": "c",
+      "explanation": "--soft moves only the branch; --mixed also resets the staging area; --hard additionally resets the working tree, discarding uncommitted changes."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "git commit --amend replaces the previous commit with a new one" },
+        { "id": "b", "text": "git reset --hard can permanently discard uncommitted changes" },
+        { "id": "c", "text": "git restore --staged <file> unstages a file while keeping the edit" },
+        { "id": "d", "text": "git revert deletes the target commit from history" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "amend rewrites the last commit, reset --hard can lose uncommitted work, and restore --staged unstages. revert does not delete history — it adds an undo commit."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To remove the last commit but keep its changes staged, run: git reset --______ HEAD~1",
+      "answer": ["soft"],
+      "explanation": "git reset --soft HEAD~1 moves the branch back one commit but leaves the index and working tree untouched, so the changes remain staged."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "A commit you pushed yesterday is buggy, and teammates have already pulled it. What's the safest way to undo it?",
+      "options": [
+        { "id": "a", "text": "git reset --hard to before the commit, then force-push" },
+        { "id": "b", "text": "git commit --amend to change it" },
+        { "id": "c", "text": "git revert the commit, creating a new undo commit" },
+        { "id": "d", "text": "Delete the repository and start over" }
+      ],
+      "answer": "c",
+      "explanation": "revert adds a forward commit that undoes the change without rewriting shared history, so everyone stays in sync. reset/amend would rewrite history others already have."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each command to its effect.",
+      "pairs": [
+        { "left": "git commit --amend", "right": "Replace the most recent commit" },
+        { "left": "git restore <file>", "right": "Discard unstaged edits to a file" },
+        { "left": "git reset --hard", "right": "Move the branch and discard working changes" },
+        { "left": "git revert", "right": "Add a new commit that undoes a past one" }
+      ],
+      "explanation": "amend rewrites the last commit, restore discards working-tree edits, reset --hard is destructive, and revert is the safe, additive undo."
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-03",
+  "lessonId": "lesson-03",
+  "title": "The Three States & Your First Commit",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "Which three areas does Git organize your project into?",
+      "options": [
+        { "id": "a", "text": "The working tree, the staging area, and the repository" },
+        { "id": "b", "text": "The client, the server, and the backup" },
+        { "id": "c", "text": "The draft, the review, and the release" },
+        { "id": "d", "text": "The branch, the tag, and the remote" }
+      ],
+      "answer": "a",
+      "explanation": "You edit files in the working tree, assemble the next commit in the staging area (index), and store permanent snapshots in the repository (.git)."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does `git add` do?",
+      "options": [
+        { "id": "a", "text": "Uploads your files to GitHub" },
+        { "id": "b", "text": "Permanently records your changes in history" },
+        { "id": "c", "text": "Stages a file's current content for the next commit (and tracks new files)" },
+        { "id": "d", "text": "Creates a new branch" }
+      ],
+      "answer": "c",
+      "explanation": "git add moves a file's current content into the staging area so it will be part of the next commit. Nothing is in history until you run git commit."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "A commit records whatever is in the staging area" },
+        { "id": "b", "text": "git add stages a file's content at the moment you run it" },
+        { "id": "c", "text": "A brand-new file starts out untracked" },
+        { "id": "d", "text": "git commit automatically uploads to GitHub" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Commits snapshot the staging area, git add captures content at that instant, and new files are untracked until added. Committing is local — sending work to GitHub is a separate git push."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The command that turns an ordinary folder into a Git repository is: git ______",
+      "answer": ["init"],
+      "explanation": "git init creates the hidden .git directory, turning the current folder into a repository."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You run `git add report.txt`, then edit report.txt again, then run `git commit`. What does the commit contain?",
+      "options": [
+        { "id": "a", "text": "The latest edit you just made" },
+        { "id": "b", "text": "The version as it was when you ran git add" },
+        { "id": "c", "text": "Both versions, merged together" },
+        { "id": "d", "text": "Nothing — Git refuses to commit" }
+      ],
+      "answer": "b",
+      "explanation": "git add snapshots the file at that moment. The later edit is unstaged, so the commit captures the earlier staged version. You'd need to git add again to include the new edit."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each command to what it does.",
+      "pairs": [
+        { "left": "git init", "right": "Create a new repository" },
+        { "left": "git status", "right": "Show what is untracked, modified, and staged" },
+        { "left": "git add", "right": "Stage changes for the next commit" },
+        { "left": "git commit", "right": "Record the staged snapshot into history" }
+      ],
+      "explanation": "init creates the repo, status reports state, add stages, and commit writes the snapshot to the repository."
+    }
+  ]
+}

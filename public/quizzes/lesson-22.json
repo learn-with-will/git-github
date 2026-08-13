@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-22",
+  "lessonId": "lesson-22",
+  "title": "GitHub Actions: CI Basics",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "Where do GitHub Actions workflow files live?",
+      "options": [
+        { "id": "a", "text": "In the repository root, named actions.yml" },
+        { "id": "b", "text": "In the .github/workflows/ directory, as YAML files" },
+        { "id": "c", "text": "In a separate GitHub Actions repository" },
+        { "id": "d", "text": "Inside the .git directory" }
+      ],
+      "answer": "b",
+      "explanation": "Workflows are YAML files placed under .github/workflows/ in the repository."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What causes a workflow to run?",
+      "options": [
+        { "id": "a", "text": "An event declared under `on:` (e.g. push or pull_request)" },
+        { "id": "b", "text": "Saving any file locally" },
+        { "id": "c", "text": "Opening the Actions tab" },
+        { "id": "d", "text": "Running git status" }
+      ],
+      "answer": "a",
+      "explanation": "A workflow's `on:` section lists the events that trigger it — push, pull_request, schedule, workflow_dispatch, and so on."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about GitHub Actions are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "A workflow contains jobs" },
+        { "id": "b", "text": "A job runs on a runner and contains steps" },
+        { "id": "c", "text": "A step can run a command or use an action" },
+        { "id": "d", "text": "Jobs always run sequentially by default" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Workflows have jobs, jobs run on runners with steps, and steps run commands or use actions. Jobs run in PARALLEL by default; use needs: to order them."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "In a workflow step, you reference a prebuilt action with the `____:` keyword.",
+      "answer": ["uses"],
+      "explanation": "A step uses an action via `uses:` (e.g. uses: actions/checkout@v4), or runs a shell command via `run:`."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Your CI job runs tests that fail with 'no such file', and the job has no checkout step. What's missing?",
+      "options": [
+        { "id": "a", "text": "A second runner" },
+        { "id": "b", "text": "The actions/checkout step — the runner has none of your code until you check it out" },
+        { "id": "c", "text": "A git commit" },
+        { "id": "d", "text": "A personal access token" }
+      ],
+      "answer": "b",
+      "explanation": "A runner starts empty. Without actions/checkout, the repository's files aren't present, so the tests can't find anything to run."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each Actions concept to its meaning.",
+      "pairs": [
+        { "left": "Workflow", "right": "An automated process in .github/workflows" },
+        { "left": "Event", "right": "What triggers a workflow (on:)" },
+        { "left": "Job", "right": "Runs on a runner and holds steps" },
+        { "left": "Step", "right": "A command (run) or an action (uses)" }
+      ],
+      "explanation": "A workflow is triggered by an event, contains jobs that run on runners, and each job's steps run commands or use actions."
+    }
+  ]
+}

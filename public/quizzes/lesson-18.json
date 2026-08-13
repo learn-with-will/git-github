@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-18",
+  "lessonId": "lesson-18",
+  "title": "Rewriting History Safely",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "Rewriting history always does what to the affected commits?",
+      "options": [
+        { "id": "a", "text": "Keeps their original hashes" },
+        { "id": "b", "text": "Gives them new hashes (creates new commits)" },
+        { "id": "c", "text": "Uploads them to the remote automatically" },
+        { "id": "d", "text": "Converts them to tags" }
+      ],
+      "answer": "b",
+      "explanation": "Amend, rebase, squash, and bulk tools all produce new commits with new hashes. That's precisely why rewriting shared history is disruptive."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which force-push is safer, and why?",
+      "options": [
+        { "id": "a", "text": "--force, because it always succeeds" },
+        { "id": "b", "text": "--force-with-lease, because it aborts if the remote has commits you haven't seen" },
+        { "id": "c", "text": "They are identical" },
+        { "id": "d", "text": "--force-with-lease, because it never rewrites anything" }
+      ],
+      "answer": "b",
+      "explanation": "--force-with-lease refuses the push if the remote advanced unexpectedly, protecting a teammate's commits from being clobbered — unlike unconditional --force."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "amend, rebase, and squash all rewrite history" },
+        { "id": "b", "text": "git filter-repo is recommended over git filter-branch for bulk rewrites" },
+        { "id": "c", "text": "You should only rewrite history that hasn't been shared, unless you coordinate" },
+        { "id": "d", "text": "Removing a leaked secret from history means you no longer need to rotate it" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Those rewrite commits, filter-repo is the recommended bulk tool, and unshared-only is the safe rule. A leaked secret must still be rotated — the rewrite can't recall existing copies."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The safer force-push that refuses if the remote moved unexpectedly is: git push --force-with-______",
+      "answer": ["lease"],
+      "explanation": "git push --force-with-lease checks that the remote ref is where you last saw it before overwriting, avoiding clobbering unseen commits."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You purged a leaked API key from all history and force-pushed. Is the key safe now?",
+      "options": [
+        { "id": "a", "text": "Yes, it's completely gone" },
+        { "id": "b", "text": "No — treat it as compromised and rotate it, since copies may persist in clones, forks, and caches" },
+        { "id": "c", "text": "Yes, as long as the repo is private" },
+        { "id": "d", "text": "Only if you also deleted the branch" }
+      ],
+      "answer": "b",
+      "explanation": "History rewriting reduces future exposure but can't recall copies that already exist. The leaked key must be rotated (revoked and replaced) to be safe."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each tool to its scope.",
+      "pairs": [
+        { "left": "git commit --amend", "right": "Rewrite the last commit" },
+        { "left": "git rebase -i", "right": "Rewrite a range of recent commits" },
+        { "left": "git filter-repo", "right": "Rewrite the entire history in bulk" },
+        { "left": "--force-with-lease", "right": "A safer force push" }
+      ],
+      "explanation": "amend touches the last commit, rebase -i a range, filter-repo all of history, and --force-with-lease updates a rewritten branch safely."
+    }
+  ]
+}

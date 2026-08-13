@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-01",
+  "lessonId": "lesson-01",
+  "title": "What Is Version Control?",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "Which statement best describes the relationship between Git and GitHub?",
+      "options": [
+        { "id": "a", "text": "They are two names for the same program" },
+        { "id": "b", "text": "Git is a version-control tool on your computer; GitHub is a service that hosts Git repositories" },
+        { "id": "c", "text": "Git cannot run unless you have a GitHub account" },
+        { "id": "d", "text": "GitHub is the command line and Git is the website" }
+      ],
+      "answer": "b",
+      "explanation": "Git is the open-source version-control tool that runs locally, with no account or internet required. GitHub is one online service that hosts Git repositories and adds collaboration features on top."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "In a distributed version-control system, what does each clone contain?",
+      "options": [
+        { "id": "a", "text": "Only the latest version of the files" },
+        { "id": "b", "text": "Only the changes you personally made" },
+        { "id": "c", "text": "A full copy of the repository, including its entire history" },
+        { "id": "d", "text": "A link to the server where the history is stored" }
+      ],
+      "answer": "c",
+      "explanation": "The defining feature of a distributed VCS like Git is that every clone mirrors the whole repository and its full history — which is why each clone is also a complete backup and works offline."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which of these statements about Git are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Git stores each commit as a snapshot of the project" },
+        { "id": "b", "text": "You can make a commit without an internet connection" },
+        { "id": "c", "text": "Git was created for Linux-kernel development" },
+        { "id": "d", "text": "Git requires a GitHub account to work" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Git stores snapshots (not diffs), works locally so you can commit offline, and was built by Linus Torvalds and the Linux community in 2005. It does not need GitHub — GitHub is just one place to host Git repos."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The kind of version-control system in which every clone holds the entire history is called a ______ version-control system. (one word)",
+      "answer": ["distributed"],
+      "explanation": "Distributed version control (Git, Mercurial) gives every clone the full history, unlike centralized systems that keep history on a single server."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "A teammate says, 'GitHub is down, so we can't commit any code right now.' Why is this a misconception?",
+      "options": [
+        { "id": "a", "text": "GitHub never actually goes down" },
+        { "id": "b", "text": "Committing is a local Git operation; you only need the network to push or pull" },
+        { "id": "c", "text": "Commits are written directly to GitHub's servers as you type" },
+        { "id": "d", "text": "You can commit, but only after switching to Subversion" }
+      ],
+      "answer": "b",
+      "explanation": "Because Git is distributed, the full repository lives on each machine. Committing, branching, and viewing history are all local — a GitHub outage only blocks syncing (push/pull), not committing."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each system to its category.",
+      "pairs": [
+        { "left": "Subversion (SVN)", "right": "Centralized version control" },
+        { "left": "Git", "right": "Distributed version control" },
+        { "left": "GitHub", "right": "Hosting service for Git repositories" },
+        { "left": "RCS", "right": "Local version control" }
+      ],
+      "explanation": "RCS is the classic local system; Subversion is centralized; Git is distributed; GitHub is not a VCS at all — it is a service that hosts Git repositories."
+    }
+  ]
+}

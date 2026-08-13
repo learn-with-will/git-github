@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-08",
+  "lessonId": "lesson-08",
+  "title": "Working with Remotes",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does the remote name `origin` refer to?",
+      "options": [
+        { "id": "a", "text": "A special protected branch on the server" },
+        { "id": "b", "text": "The default name Git gives the remote you cloned from" },
+        { "id": "c", "text": "The very first commit in the repository" },
+        { "id": "d", "text": "Your GitHub username" }
+      ],
+      "answer": "b",
+      "explanation": "When you clone, Git names the source remote 'origin' by convention. It's an ordinary remote name — you can rename it or add others."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What is the difference between `git fetch` and `git pull`?",
+      "options": [
+        { "id": "a", "text": "They are identical" },
+        { "id": "b", "text": "fetch uploads your commits; pull downloads them" },
+        { "id": "c", "text": "fetch downloads without changing your branch; pull downloads and integrates into your branch" },
+        { "id": "d", "text": "pull works offline; fetch needs a network" }
+      ],
+      "answer": "c",
+      "explanation": "fetch only updates remote-tracking branches like origin/main. pull does a fetch and then merges (or rebases) those changes into your current branch."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "git clone copies the repository's full history" },
+        { "id": "b", "text": "git push uploads your local commits to a remote" },
+        { "id": "c", "text": "origin/main is a remote-tracking pointer" },
+        { "id": "d", "text": "git fetch merges remote changes into your current branch" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "clone brings the full history, push uploads commits, and origin/main tracks the remote. fetch does NOT merge — that's what pull adds."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To push a branch and set its upstream so later pushes need no arguments: git push -__ origin main",
+      "answer": ["u"],
+      "explanation": "git push -u origin main sets origin/main as the upstream (tracking) branch, so a bare git push/pull works afterward."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Your `git push` is rejected as non-fast-forward because the remote has commits you don't have. What's the correct next step?",
+      "options": [
+        { "id": "a", "text": "git push --force to overwrite the remote" },
+        { "id": "b", "text": "Delete your branch and start over" },
+        { "id": "c", "text": "git pull to integrate the remote's commits, then push again" },
+        { "id": "d", "text": "Rename origin and push to the new name" }
+      ],
+      "answer": "c",
+      "explanation": "The rejection protects the remote's commits. Pull to merge/rebase them into your work (resolving any conflicts), then push. Force-pushing would erase the other commits."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each command to what it does.",
+      "pairs": [
+        { "left": "git clone", "right": "Copy a remote repository locally" },
+        { "left": "git fetch", "right": "Download remote changes without merging" },
+        { "left": "git pull", "right": "Fetch and integrate into your branch" },
+        { "left": "git push", "right": "Upload your commits to a remote" }
+      ],
+      "explanation": "clone creates the local copy, fetch downloads only, pull downloads and integrates, and push sends your commits upstream."
+    }
+  ]
+}

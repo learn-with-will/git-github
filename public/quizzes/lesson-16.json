@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-16",
+  "lessonId": "lesson-16",
+  "title": "Tags, Releases & Semantic Versioning",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What's the difference between a lightweight and an annotated tag?",
+      "options": [
+        { "id": "a", "text": "Lightweight tags move with the branch; annotated tags don't" },
+        { "id": "b", "text": "A lightweight tag is just a name pointing at a commit; an annotated tag is a full object storing tagger, date, and message" },
+        { "id": "c", "text": "Annotated tags can only be used on GitHub" },
+        { "id": "d", "text": "There is no difference" }
+      ],
+      "answer": "b",
+      "explanation": "A lightweight tag is a bare pointer; an annotated tag is a full object with tagger, date, and message (and can be signed), which is why it's preferred for releases."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "In SemVer MAJOR.MINOR.PATCH, which part increments for a backward-compatible bug fix?",
+      "options": [
+        { "id": "a", "text": "MAJOR" },
+        { "id": "b", "text": "MINOR" },
+        { "id": "c", "text": "PATCH" },
+        { "id": "d", "text": "None — bug fixes don't change the version" }
+      ],
+      "answer": "c",
+      "explanation": "A backward-compatible bug fix bumps PATCH (e.g. 1.4.2 → 1.4.3). MINOR is for backward-compatible features; MAJOR is for breaking changes."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Tags are not pushed by default; you push them explicitly" },
+        { "id": "b", "text": "A GitHub Release is built on top of a Git tag" },
+        { "id": "c", "text": "Annotated tags store a message and tagger" },
+        { "id": "d", "text": "A MAJOR bump is for backward-compatible additions" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Tags need an explicit push, Releases anchor to tags, and annotated tags carry metadata. Backward-compatible additions bump MINOR, not MAJOR."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "In semantic versioning, a change that breaks backward compatibility increments the ______ number.",
+      "answer": ["MAJOR", "major", "Major"],
+      "explanation": "Breaking, incompatible changes bump the MAJOR version (e.g. 1.4.2 → 2.0.0)."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "A project is at 1.4.2. You add a new feature that doesn't break existing usage. What should the next version be?",
+      "options": [
+        { "id": "a", "text": "1.4.3" },
+        { "id": "b", "text": "1.5.0" },
+        { "id": "c", "text": "2.0.0" },
+        { "id": "d", "text": "1.4.2 (no change)" }
+      ],
+      "answer": "b",
+      "explanation": "A new backward-compatible feature bumps MINOR and resets PATCH to 0: 1.4.2 → 1.5.0."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each item to its description.",
+      "pairs": [
+        { "left": "Lightweight tag", "right": "A plain pointer to a commit" },
+        { "left": "Annotated tag", "right": "Full object with tagger and message" },
+        { "left": "GitHub Release", "right": "A tag plus notes and assets" },
+        { "left": "SemVer MAJOR", "right": "Incremented for breaking changes" }
+      ],
+      "explanation": "Lightweight is a bare pointer, annotated carries metadata, a Release adds notes/assets to a tag, and MAJOR marks breaking changes."
+    }
+  ]
+}

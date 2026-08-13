@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-17",
+  "lessonId": "lesson-17",
+  "title": "Stash, Cherry-pick & Reflog",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does `git stash` do?",
+      "options": [
+        { "id": "a", "text": "Permanently deletes your uncommitted changes" },
+        { "id": "b", "text": "Saves your uncommitted changes on a stack and restores a clean working tree" },
+        { "id": "c", "text": "Commits your changes to the current branch" },
+        { "id": "d", "text": "Pushes your changes to the remote" }
+      ],
+      "answer": "b",
+      "explanation": "git stash shelves your uncommitted changes onto a stack and gives you a clean working tree, so you can switch context and reapply them later."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "What does `git cherry-pick <commit>` do?",
+      "options": [
+        { "id": "a", "text": "Merges the entire branch containing that commit" },
+        { "id": "b", "text": "Applies that single commit's changes onto your current branch as a new commit" },
+        { "id": "c", "text": "Deletes that commit from history" },
+        { "id": "d", "text": "Tags that commit" }
+      ],
+      "answer": "b",
+      "explanation": "cherry-pick copies the changes introduced by one specific commit onto your current branch, creating a new commit with a new hash."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about the reflog are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "It records where HEAD and branches have pointed over time" },
+        { "id": "b", "text": "It is local to your machine" },
+        { "id": "c", "text": "It can help you recover a commit after a mistaken reset --hard" },
+        { "id": "d", "text": "It is stored on the remote server" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "The reflog is a local log of HEAD/branch movements that enables recovery of unreachable commits. It is never pushed to the remote."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To reapply the most recent stash and remove it from the stack, run: git stash ____",
+      "answer": ["pop"],
+      "explanation": "git stash pop reapplies the latest stash and drops it from the stack (git stash apply reapplies but keeps it)."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "You ran `git reset --hard` and lost a commit you needed. How can you get it back?",
+      "options": [
+        { "id": "a", "text": "It's impossible; the commit is gone forever" },
+        { "id": "b", "text": "Find its hash in git reflog and restore it (e.g. git reset --hard HEAD@{1})" },
+        { "id": "c", "text": "Run git pull to download it from the remote" },
+        { "id": "d", "text": "Reinstall Git" }
+      ],
+      "answer": "b",
+      "explanation": "A committed change remains referenced in the reflog even after reset --hard. Locate it in git reflog and reset or branch to that hash to recover it."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each command to what it does.",
+      "pairs": [
+        { "left": "git stash", "right": "Shelve uncommitted changes" },
+        { "left": "git cherry-pick", "right": "Copy one commit onto the current branch" },
+        { "left": "git reflog", "right": "Show the history of HEAD moves for recovery" },
+        { "left": "git stash pop", "right": "Reapply a stash and drop it" }
+      ],
+      "explanation": "stash shelves work, cherry-pick copies a commit, reflog aids recovery, and stash pop restores then removes the stash."
+    }
+  ]
+}

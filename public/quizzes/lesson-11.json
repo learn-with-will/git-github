@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-11",
+  "lessonId": "lesson-11",
+  "title": "Forking & Contributing to Open Source",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What is a fork on GitHub?",
+      "options": [
+        { "id": "a", "text": "A branch inside the original repository" },
+        { "id": "b", "text": "A server-side copy of a repository under your own account" },
+        { "id": "c", "text": "A backup tag of a release" },
+        { "id": "d", "text": "A merge of two repositories" }
+      ],
+      "answer": "b",
+      "explanation": "A fork is your own copy of someone else's repository on GitHub. You have push access to your fork even without access to the original."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "In the fork-and-pull model, what does the `upstream` remote point to?",
+      "options": [
+        { "id": "a", "text": "Your fork" },
+        { "id": "b", "text": "The original repository you forked from" },
+        { "id": "c", "text": "Your local machine" },
+        { "id": "d", "text": "A random mirror" }
+      ],
+      "answer": "b",
+      "explanation": "By convention, origin is your fork and upstream is the original repository — the source you sync from and open pull requests against."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements about the fork-and-pull workflow are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Forking creates a copy of the repo under your account" },
+        { "id": "b", "text": "You clone your fork, so origin points to it" },
+        { "id": "c", "text": "You add upstream to sync with the original" },
+        { "id": "d", "text": "You need write access to the original repo to contribute" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Forking copies the repo to your account, origin is your fork, and upstream lets you sync. You do NOT need write access to the original — that's the whole point of forking."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "To add the original repository as a remote so you can sync, run: git remote add ________ <original-url>",
+      "answer": ["upstream"],
+      "explanation": "By convention the original repo is added as the remote named upstream, distinct from origin (your fork)."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Your fork's main has fallen behind the original. How do you update it?",
+      "options": [
+        { "id": "a", "text": "Delete the fork and fork again" },
+        { "id": "b", "text": "git fetch upstream, then merge (or rebase) upstream/main into your main, and push to your fork" },
+        { "id": "c", "text": "git push --force to the upstream repository" },
+        { "id": "d", "text": "There is no way to sync a fork" }
+      ],
+      "answer": "b",
+      "explanation": "Fetch the upstream, integrate upstream/main into your main, and push to origin (your fork). This keeps your fork current without re-forking."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each term to its role.",
+      "pairs": [
+        { "left": "Fork", "right": "A copy of a repo under your account" },
+        { "left": "origin", "right": "Your fork" },
+        { "left": "upstream", "right": "The original repository" },
+        { "left": "Pull request", "right": "Propose your changes back to upstream" }
+      ],
+      "explanation": "A fork copies the repo to your account; origin is your fork; upstream is the source; a PR proposes your work back to it."
+    }
+  ]
+}

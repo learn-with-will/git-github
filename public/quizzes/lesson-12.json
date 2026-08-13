@@ -1,0 +1,79 @@
+{
+  "id": "quiz-lesson-12",
+  "lessonId": "lesson-12",
+  "title": "PR Merge Strategies: Merge, Squash & Rebase",
+  "passingScore": 60,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "single-choice",
+      "prompt": "What does 'Squash and merge' do?",
+      "options": [
+        { "id": "a", "text": "Combines all of the PR's commits into a single commit on the base branch" },
+        { "id": "b", "text": "Creates a merge commit with two parents" },
+        { "id": "c", "text": "Deletes the PR's commits without merging" },
+        { "id": "d", "text": "Replays each commit individually onto the base" }
+      ],
+      "answer": "a",
+      "explanation": "Squash and merge collapses every commit in the PR into one new commit on the base branch, keeping history linear and tidy."
+    },
+    {
+      "id": "q2",
+      "type": "single-choice",
+      "prompt": "Which merge method creates a merge commit with two parents?",
+      "options": [
+        { "id": "a", "text": "Squash and merge" },
+        { "id": "b", "text": "Rebase and merge" },
+        { "id": "c", "text": "Create a merge commit" },
+        { "id": "d", "text": "None of them create a merge commit" }
+      ],
+      "answer": "c",
+      "explanation": "The 'Create a merge commit' method adds all the branch's commits plus a two-parent merge commit. Squash and rebase both avoid a merge commit."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which statements are true? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "Rebase and merge produces a linear history without a merge commit" },
+        { "id": "b", "text": "Squash and merge reduces a branch to one commit on the base" },
+        { "id": "c", "text": "A merge commit preserves all the branch's commits and adds a merge commit" },
+        { "id": "d", "text": "Rebase and merge keeps the branch's original commit hashes" }
+      ],
+      "answer": ["a", "b", "c"],
+      "explanation": "Rebase is linear with no merge commit, squash collapses to one commit, and the merge-commit method keeps everything plus a merge commit. Rebase rewrites commits, so the hashes change."
+    },
+    {
+      "id": "q4",
+      "type": "fill-blank",
+      "prompt": "The merge method that reduces all of a PR's commits to a single commit is called '______ and merge'.",
+      "answer": ["squash", "Squash"],
+      "explanation": "Squash and merge combines the PR's commits into one commit on the base branch."
+    },
+    {
+      "id": "q5",
+      "type": "single-choice",
+      "prompt": "Your PR has eight noisy 'wip'/'fix' commits, and the team wants main to read as one commit per feature. Which method fits best?",
+      "options": [
+        { "id": "a", "text": "Create a merge commit" },
+        { "id": "b", "text": "Squash and merge" },
+        { "id": "c", "text": "Rebase and merge" },
+        { "id": "d", "text": "None — you must clean the commits by hand first" }
+      ],
+      "answer": "b",
+      "explanation": "Squash and merge collapses the eight noisy commits into a single clean commit on main — exactly the one-commit-per-feature history the team wants."
+    },
+    {
+      "id": "q6",
+      "type": "match-pair",
+      "prompt": "Match each merge method to its result on the base branch.",
+      "pairs": [
+        { "left": "Create a merge commit", "right": "All commits plus a two-parent merge commit" },
+        { "left": "Squash and merge", "right": "One combined commit" },
+        { "left": "Rebase and merge", "right": "Commits replayed linearly, no merge commit" },
+        { "left": "Linear history", "right": "History with no merge commits" }
+      ],
+      "explanation": "Merge-commit keeps everything plus a merge commit; squash yields one commit; rebase replays commits with no merge commit; both squash and rebase give linear history."
+    }
+  ]
+}
