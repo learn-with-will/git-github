@@ -1,0 +1,3806 @@
+[
+  {
+    "id": "foundations-l01-q1",
+    "type": "single-choice",
+    "prompt": "Which statement best describes the relationship between Git and GitHub?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are two names for the same program"
+      },
+      {
+        "id": "b",
+        "text": "Git is a version-control tool on your computer; GitHub is a service that hosts Git repositories"
+      },
+      {
+        "id": "c",
+        "text": "Git cannot run unless you have a GitHub account"
+      },
+      {
+        "id": "d",
+        "text": "GitHub is the command line and Git is the website"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Git is the open-source version-control tool that runs locally, with no account or internet required. GitHub is one online service that hosts Git repositories and adds collaboration features on top.",
+    "topic": "foundations",
+    "lesson": "version-control-models"
+  },
+  {
+    "id": "foundations-l01-q2",
+    "type": "single-choice",
+    "prompt": "In a distributed version-control system, what does each clone contain?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Only the latest version of the files"
+      },
+      {
+        "id": "b",
+        "text": "Only the changes you personally made"
+      },
+      {
+        "id": "c",
+        "text": "A full copy of the repository, including its entire history"
+      },
+      {
+        "id": "d",
+        "text": "A link to the server where the history is stored"
+      }
+    ],
+    "answer": "c",
+    "explanation": "The defining feature of a distributed VCS like Git is that every clone mirrors the whole repository and its full history \u2014 which is why each clone is also a complete backup and works offline.",
+    "topic": "foundations",
+    "lesson": "snapshots-vs-diffs"
+  },
+  {
+    "id": "foundations-l01-q3",
+    "type": "multiple-choice",
+    "prompt": "Which of these statements about Git are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Git stores each commit as a snapshot of the project"
+      },
+      {
+        "id": "b",
+        "text": "You can make a commit without an internet connection"
+      },
+      {
+        "id": "c",
+        "text": "Git was created for Linux-kernel development"
+      },
+      {
+        "id": "d",
+        "text": "Git requires a GitHub account to work"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Git stores snapshots (not diffs), works locally so you can commit offline, and was built by Linus Torvalds and the Linux community in 2005. It does not need GitHub \u2014 GitHub is just one place to host Git repos.",
+    "topic": "foundations",
+    "lesson": "git-design-philosophy"
+  },
+  {
+    "id": "foundations-l01-q4",
+    "type": "fill-blank",
+    "prompt": "The kind of version-control system in which every clone holds the entire history is called a ______ version-control system. (one word)",
+    "answer": [
+      "distributed"
+    ],
+    "explanation": "Distributed version control (Git, Mercurial) gives every clone the full history, unlike centralized systems that keep history on a single server.",
+    "topic": "foundations",
+    "lesson": "git-vs-github"
+  },
+  {
+    "id": "foundations-l01-q5",
+    "type": "single-choice",
+    "prompt": "A teammate says, 'GitHub is down, so we can't commit any code right now.' Why is this a misconception?",
+    "options": [
+      {
+        "id": "a",
+        "text": "GitHub never actually goes down"
+      },
+      {
+        "id": "b",
+        "text": "Committing is a local Git operation; you only need the network to push or pull"
+      },
+      {
+        "id": "c",
+        "text": "Commits are written directly to GitHub's servers as you type"
+      },
+      {
+        "id": "d",
+        "text": "You can commit, but only after switching to Subversion"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Because Git is distributed, the full repository lives on each machine. Committing, branching, and viewing history are all local \u2014 a GitHub outage only blocks syncing (push/pull), not committing.",
+    "topic": "foundations",
+    "lesson": "version-control-models"
+  },
+  {
+    "id": "foundations-l01-q6",
+    "type": "match-pair",
+    "prompt": "Match each system to its category.",
+    "pairs": [
+      {
+        "left": "Subversion (SVN)",
+        "right": "Centralized version control"
+      },
+      {
+        "left": "Git",
+        "right": "Distributed version control"
+      },
+      {
+        "left": "GitHub",
+        "right": "Hosting service for Git repositories"
+      },
+      {
+        "left": "RCS",
+        "right": "Local version control"
+      }
+    ],
+    "explanation": "RCS is the classic local system; Subversion is centralized; Git is distributed; GitHub is not a VCS at all \u2014 it is a service that hosts Git repositories.",
+    "topic": "foundations",
+    "lesson": "snapshots-vs-diffs"
+  },
+  {
+    "id": "foundations-l02-q1",
+    "type": "single-choice",
+    "prompt": "What does `git config --global user.email` set?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The email for one repository only"
+      },
+      {
+        "id": "b",
+        "text": "The email recorded in your commits across all your repositories"
+      },
+      {
+        "id": "c",
+        "text": "Your GitHub account password"
+      },
+      {
+        "id": "d",
+        "text": "The email of the repository's owner on the server"
+      }
+    ],
+    "answer": "b",
+    "explanation": "The --global scope applies to your user account across every repository, and user.email is stamped onto the commits you make. A single repo can override it with a --local value.",
+    "topic": "foundations",
+    "lesson": "installing-git"
+  },
+  {
+    "id": "foundations-l02-q2",
+    "type": "single-choice",
+    "prompt": "The same setting is defined at both the global and local levels. Which value does Git use?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The global value \u2014 it is broader"
+      },
+      {
+        "id": "b",
+        "text": "The local value \u2014 the most specific level wins"
+      },
+      {
+        "id": "c",
+        "text": "Whichever was set most recently"
+      },
+      {
+        "id": "d",
+        "text": "Git reports an error and uses neither"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Precedence runs system < global < local, so the most specific level in effect wins. A local (per-repository) value overrides a global (per-user) one.",
+    "topic": "foundations",
+    "lesson": "git-user-identity"
+  },
+  {
+    "id": "foundations-l02-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about Git configuration are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Local config is stored in the repository's .git/config file"
+      },
+      {
+        "id": "b",
+        "text": "The --global level applies to your user account"
+      },
+      {
+        "id": "c",
+        "text": "Git config files are written in INI format"
+      },
+      {
+        "id": "d",
+        "text": "You must reinstall Git to change a setting"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Local settings live in .git/config, global settings apply to your user, and the files are INI-formatted. Settings are changed any time with git config \u2014 no reinstall needed.",
+    "topic": "foundations",
+    "lesson": "configuration-scopes"
+  },
+  {
+    "id": "foundations-l02-q4",
+    "type": "fill-blank",
+    "prompt": "To list every setting along with the file it came from, run: git config --list --______",
+    "answer": [
+      "show-origin"
+    ],
+    "explanation": "git config --list --show-origin prints each effective setting prefixed with the config file it originated from \u2014 the fastest way to debug a surprising value.",
+    "topic": "foundations",
+    "lesson": "essential-git-settings"
+  },
+  {
+    "id": "foundations-l02-q5",
+    "type": "single-choice",
+    "prompt": "Your pushed commits show a generic avatar and aren't linked to your GitHub profile. What is the most likely cause?",
+    "options": [
+      {
+        "id": "a",
+        "text": "You used HTTPS instead of SSH"
+      },
+      {
+        "id": "b",
+        "text": "Your commit user.email doesn't match an email verified on your GitHub account"
+      },
+      {
+        "id": "c",
+        "text": "You forgot to run git init"
+      },
+      {
+        "id": "d",
+        "text": "Your repository is private"
+      }
+    ],
+    "answer": "b",
+    "explanation": "GitHub links commits to accounts by the commit's email address. If user.email doesn't match a verified email on your account, the commits won't be attributed to your profile.",
+    "topic": "foundations",
+    "lesson": "installing-git"
+  },
+  {
+    "id": "foundations-l02-q6",
+    "type": "match-pair",
+    "prompt": "Match each config scope or command to what it does.",
+    "pairs": [
+      {
+        "left": "--system",
+        "right": "Applies to every user on the machine"
+      },
+      {
+        "left": "--global",
+        "right": "Applies to your user account, all repos"
+      },
+      {
+        "left": "--local",
+        "right": "Applies to a single repository"
+      },
+      {
+        "left": "git config --list",
+        "right": "Shows all effective settings"
+      }
+    ],
+    "explanation": "System is machine-wide, global is per-user, local is per-repository, and git config --list prints the settings currently in effect.",
+    "topic": "foundations",
+    "lesson": "git-user-identity"
+  },
+  {
+    "id": "basics-workflow-l03-q1",
+    "type": "single-choice",
+    "prompt": "Which three areas does Git organize your project into?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The working tree, the staging area, and the repository"
+      },
+      {
+        "id": "b",
+        "text": "The client, the server, and the backup"
+      },
+      {
+        "id": "c",
+        "text": "The draft, the review, and the release"
+      },
+      {
+        "id": "d",
+        "text": "The branch, the tag, and the remote"
+      }
+    ],
+    "answer": "a",
+    "explanation": "You edit files in the working tree, assemble the next commit in the staging area (index), and store permanent snapshots in the repository (.git).",
+    "topic": "basics-workflow",
+    "lesson": "three-areas-three-states"
+  },
+  {
+    "id": "basics-workflow-l03-q2",
+    "type": "single-choice",
+    "prompt": "What does `git add` do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Uploads your files to GitHub"
+      },
+      {
+        "id": "b",
+        "text": "Permanently records your changes in history"
+      },
+      {
+        "id": "c",
+        "text": "Stages a file's current content for the next commit (and tracks new files)"
+      },
+      {
+        "id": "d",
+        "text": "Creates a new branch"
+      }
+    ],
+    "answer": "c",
+    "explanation": "git add moves a file's current content into the staging area so it will be part of the next commit. Nothing is in history until you run git commit.",
+    "topic": "basics-workflow",
+    "lesson": "initializing-a-repository"
+  },
+  {
+    "id": "basics-workflow-l03-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A commit records whatever is in the staging area"
+      },
+      {
+        "id": "b",
+        "text": "git add stages a file's content at the moment you run it"
+      },
+      {
+        "id": "c",
+        "text": "A brand-new file starts out untracked"
+      },
+      {
+        "id": "d",
+        "text": "git commit automatically uploads to GitHub"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Commits snapshot the staging area, git add captures content at that instant, and new files are untracked until added. Committing is local \u2014 sending work to GitHub is a separate git push.",
+    "topic": "basics-workflow",
+    "lesson": "staging-with-git-add"
+  },
+  {
+    "id": "basics-workflow-l03-q4",
+    "type": "fill-blank",
+    "prompt": "The command that turns an ordinary folder into a Git repository is: git ______",
+    "answer": [
+      "init"
+    ],
+    "explanation": "git init creates the hidden .git directory, turning the current folder into a repository.",
+    "topic": "basics-workflow",
+    "lesson": "creating-snapshots-git-commit"
+  },
+  {
+    "id": "basics-workflow-l03-q5",
+    "type": "single-choice",
+    "prompt": "You run `git add report.txt`, then edit report.txt again, then run `git commit`. What does the commit contain?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The latest edit you just made"
+      },
+      {
+        "id": "b",
+        "text": "The version as it was when you ran git add"
+      },
+      {
+        "id": "c",
+        "text": "Both versions, merged together"
+      },
+      {
+        "id": "d",
+        "text": "Nothing \u2014 Git refuses to commit"
+      }
+    ],
+    "answer": "b",
+    "explanation": "git add snapshots the file at that moment. The later edit is unstaged, so the commit captures the earlier staged version. You'd need to git add again to include the new edit.",
+    "topic": "basics-workflow",
+    "lesson": "three-areas-three-states"
+  },
+  {
+    "id": "basics-workflow-l03-q6",
+    "type": "match-pair",
+    "prompt": "Match each command to what it does.",
+    "pairs": [
+      {
+        "left": "git init",
+        "right": "Create a new repository"
+      },
+      {
+        "left": "git status",
+        "right": "Show what is untracked, modified, and staged"
+      },
+      {
+        "left": "git add",
+        "right": "Stage changes for the next commit"
+      },
+      {
+        "left": "git commit",
+        "right": "Record the staged snapshot into history"
+      }
+    ],
+    "explanation": "init creates the repo, status reports state, add stages, and commit writes the snapshot to the repository.",
+    "topic": "basics-workflow",
+    "lesson": "initializing-a-repository"
+  },
+  {
+    "id": "basics-workflow-l04-q1",
+    "type": "single-choice",
+    "prompt": "What does `git diff` (with no arguments) show?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The changes between the last two commits"
+      },
+      {
+        "id": "b",
+        "text": "Your unstaged changes: the working tree vs. the staging area"
+      },
+      {
+        "id": "c",
+        "text": "Everything that has ever changed in the repo"
+      },
+      {
+        "id": "d",
+        "text": "The differences between your branch and the remote"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Bare `git diff` compares the working tree to the staging area \u2014 i.e. the changes you have made but not yet staged.",
+    "topic": "basics-workflow",
+    "lesson": "inspecting-history-git-log"
+  },
+  {
+    "id": "basics-workflow-l04-q2",
+    "type": "single-choice",
+    "prompt": "Which command shows exactly what your next commit will contain?",
+    "options": [
+      {
+        "id": "a",
+        "text": "git diff"
+      },
+      {
+        "id": "b",
+        "text": "git log -p"
+      },
+      {
+        "id": "c",
+        "text": "git diff --staged"
+      },
+      {
+        "id": "d",
+        "text": "git status --short"
+      }
+    ],
+    "answer": "c",
+    "explanation": "git diff --staged (also --cached) compares the staging area to the last commit, showing precisely the changes that are about to be committed.",
+    "topic": "basics-workflow",
+    "lesson": "formatting-and-filtering-logs"
+  },
+  {
+    "id": "basics-workflow-l04-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about .gitignore are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It lists patterns of files Git should not track"
+      },
+      {
+        "id": "b",
+        "text": "It supports glob patterns like *.log and build/"
+      },
+      {
+        "id": "c",
+        "text": "It only affects files that are currently untracked"
+      },
+      {
+        "id": "d",
+        "text": "It automatically untracks files you already committed"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "gitignore holds glob patterns for untracked files and only prevents tracking of files not already committed. Removing an already-tracked file needs git rm --cached.",
+    "topic": "basics-workflow",
+    "lesson": "comparing-changes-git-diff"
+  },
+  {
+    "id": "basics-workflow-l04-q4",
+    "type": "fill-blank",
+    "prompt": "To view history with one compact line per commit, run: git log --______",
+    "answer": [
+      "oneline"
+    ],
+    "explanation": "git log --oneline prints each commit as a short hash plus its subject line \u2014 a quick overview, often paired with --graph.",
+    "topic": "basics-workflow",
+    "lesson": "ignoring-files-gitignore"
+  },
+  {
+    "id": "basics-workflow-l04-q5",
+    "type": "single-choice",
+    "prompt": "You added `secrets.env` to .gitignore, but Git still tracks it. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": ".gitignore patterns are case-sensitive"
+      },
+      {
+        "id": "b",
+        "text": "The file was already committed; .gitignore doesn't untrack existing files"
+      },
+      {
+        "id": "c",
+        "text": "You need to restart Git for .gitignore to take effect"
+      },
+      {
+        "id": "d",
+        "text": ".env files can never be ignored"
+      }
+    ],
+    "answer": "b",
+    "explanation": ".gitignore only stops Git from tracking currently-untracked files. A file that was already committed keeps being tracked until you git rm --cached it.",
+    "topic": "basics-workflow",
+    "lesson": "inspecting-history-git-log"
+  },
+  {
+    "id": "basics-workflow-l04-q6",
+    "type": "match-pair",
+    "prompt": "Match each `git log` option to what it shows.",
+    "pairs": [
+      {
+        "left": "--oneline",
+        "right": "One compact line per commit"
+      },
+      {
+        "left": "--graph",
+        "right": "An ASCII graph of branches and merges"
+      },
+      {
+        "left": "--stat",
+        "right": "A summary of files changed"
+      },
+      {
+        "left": "-p",
+        "right": "The full diff for each commit"
+      }
+    ],
+    "explanation": "--oneline compresses each commit to a line, --graph draws branch topology, --stat summarizes changed files, and -p shows the patches.",
+    "topic": "basics-workflow",
+    "lesson": "formatting-and-filtering-logs"
+  },
+  {
+    "id": "undoing-changes-l05-q1",
+    "type": "single-choice",
+    "prompt": "What does `git revert <commit>` do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deletes the commit from history"
+      },
+      {
+        "id": "b",
+        "text": "Creates a new commit that undoes the target commit's changes"
+      },
+      {
+        "id": "c",
+        "text": "Moves the branch pointer back to before the commit"
+      },
+      {
+        "id": "d",
+        "text": "Discards all uncommitted work"
+      }
+    ],
+    "answer": "b",
+    "explanation": "revert adds a new commit applying the inverse of the target, undoing its effect while leaving history intact \u2014 which is why it's safe on shared branches.",
+    "topic": "undoing-changes",
+    "lesson": "amending-commits"
+  },
+  {
+    "id": "undoing-changes-l05-q2",
+    "type": "single-choice",
+    "prompt": "Which `git reset` mode changes your working-tree files (and can discard uncommitted work)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "--soft"
+      },
+      {
+        "id": "b",
+        "text": "--mixed"
+      },
+      {
+        "id": "c",
+        "text": "--hard"
+      },
+      {
+        "id": "d",
+        "text": "None of them touch the working tree"
+      }
+    ],
+    "answer": "c",
+    "explanation": "--soft moves only the branch; --mixed also resets the staging area; --hard additionally resets the working tree, discarding uncommitted changes.",
+    "topic": "undoing-changes",
+    "lesson": "restoring-files"
+  },
+  {
+    "id": "undoing-changes-l05-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "git commit --amend replaces the previous commit with a new one"
+      },
+      {
+        "id": "b",
+        "text": "git reset --hard can permanently discard uncommitted changes"
+      },
+      {
+        "id": "c",
+        "text": "git restore --staged <file> unstages a file while keeping the edit"
+      },
+      {
+        "id": "d",
+        "text": "git revert deletes the target commit from history"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "amend rewrites the last commit, reset --hard can lose uncommitted work, and restore --staged unstages. revert does not delete history \u2014 it adds an undo commit.",
+    "topic": "undoing-changes",
+    "lesson": "git-reset-modes"
+  },
+  {
+    "id": "undoing-changes-l05-q4",
+    "type": "fill-blank",
+    "prompt": "To remove the last commit but keep its changes staged, run: git reset --______ HEAD~1",
+    "answer": [
+      "soft"
+    ],
+    "explanation": "git reset --soft HEAD~1 moves the branch back one commit but leaves the index and working tree untouched, so the changes remain staged.",
+    "topic": "undoing-changes",
+    "lesson": "reverting-shared-commits"
+  },
+  {
+    "id": "undoing-changes-l05-q5",
+    "type": "single-choice",
+    "prompt": "A commit you pushed yesterday is buggy, and teammates have already pulled it. What's the safest way to undo it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "git reset --hard to before the commit, then force-push"
+      },
+      {
+        "id": "b",
+        "text": "git commit --amend to change it"
+      },
+      {
+        "id": "c",
+        "text": "git revert the commit, creating a new undo commit"
+      },
+      {
+        "id": "d",
+        "text": "Delete the repository and start over"
+      }
+    ],
+    "answer": "c",
+    "explanation": "revert adds a forward commit that undoes the change without rewriting shared history, so everyone stays in sync. reset/amend would rewrite history others already have.",
+    "topic": "undoing-changes",
+    "lesson": "amending-commits"
+  },
+  {
+    "id": "undoing-changes-l05-q6",
+    "type": "match-pair",
+    "prompt": "Match each command to its effect.",
+    "pairs": [
+      {
+        "left": "git commit --amend",
+        "right": "Replace the most recent commit"
+      },
+      {
+        "left": "git restore <file>",
+        "right": "Discard unstaged edits to a file"
+      },
+      {
+        "left": "git reset --hard",
+        "right": "Move the branch and discard working changes"
+      },
+      {
+        "left": "git revert",
+        "right": "Add a new commit that undoes a past one"
+      }
+    ],
+    "explanation": "amend rewrites the last commit, restore discards working-tree edits, reset --hard is destructive, and revert is the safe, additive undo.",
+    "topic": "undoing-changes",
+    "lesson": "restoring-files"
+  },
+  {
+    "id": "branching-merging-l06-q1",
+    "type": "single-choice",
+    "prompt": "What is a branch in Git?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A full copy of your project files"
+      },
+      {
+        "id": "b",
+        "text": "A lightweight, movable pointer to a commit"
+      },
+      {
+        "id": "c",
+        "text": "A snapshot of the staging area"
+      },
+      {
+        "id": "d",
+        "text": "A backup stored on GitHub"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A branch is just a small movable pointer to a commit. Creating one copies nothing, which is why branching is instant.",
+    "topic": "branching-merging",
+    "lesson": "branches-as-pointers"
+  },
+  {
+    "id": "branching-merging-l06-q2",
+    "type": "single-choice",
+    "prompt": "What does HEAD normally point to?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The oldest commit in the repository"
+      },
+      {
+        "id": "b",
+        "text": "The remote server"
+      },
+      {
+        "id": "c",
+        "text": "The branch you currently have checked out"
+      },
+      {
+        "id": "d",
+        "text": "The staging area"
+      }
+    ],
+    "answer": "c",
+    "explanation": "HEAD is the pointer to your current branch \u2014 'you are here'. When you commit, the branch HEAD points to advances.",
+    "topic": "branching-merging",
+    "lesson": "head-and-detached-head"
+  },
+  {
+    "id": "branching-merging-l06-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about branches are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Creating a branch does not copy your files"
+      },
+      {
+        "id": "b",
+        "text": "git switch -c creates a branch and switches to it"
+      },
+      {
+        "id": "c",
+        "text": "Branches are cheap because they are just pointers"
+      },
+      {
+        "id": "d",
+        "text": "git branch <name> switches you onto the new branch"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Branches are pointers (no copying, cheap), and switch -c both creates and switches. git branch <name> only creates the branch \u2014 you still need git switch to move onto it.",
+    "topic": "branching-merging",
+    "lesson": "branch-operations"
+  },
+  {
+    "id": "branching-merging-l06-q4",
+    "type": "fill-blank",
+    "prompt": "To create and switch to a branch named feature in one command: git switch -__ feature",
+    "answer": [
+      "c"
+    ],
+    "explanation": "git switch -c feature creates the branch and switches to it. (The older equivalent is git checkout -b feature.)",
+    "topic": "branching-merging",
+    "lesson": "branch-navigation-best-practices"
+  },
+  {
+    "id": "branching-merging-l06-q5",
+    "type": "single-choice",
+    "prompt": "You checked out a specific commit hash, made commits, and Git warned about a 'detached HEAD'. What's the risk?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The commits are uploaded to GitHub automatically"
+      },
+      {
+        "id": "b",
+        "text": "The commits belong to no branch and can be lost when you switch away"
+      },
+      {
+        "id": "c",
+        "text": "Your working tree is now read-only"
+      },
+      {
+        "id": "d",
+        "text": "The main branch is deleted"
+      }
+    ],
+    "answer": "b",
+    "explanation": "In detached HEAD, HEAD points at a commit rather than a branch, so new commits are unreferenced. Create a branch (git switch -c) to keep them.",
+    "topic": "branching-merging",
+    "lesson": "branches-as-pointers"
+  },
+  {
+    "id": "branching-merging-l06-q6",
+    "type": "match-pair",
+    "prompt": "Match each command to what it does.",
+    "pairs": [
+      {
+        "left": "git branch",
+        "right": "List the branches"
+      },
+      {
+        "left": "git branch <name>",
+        "right": "Create a branch without switching"
+      },
+      {
+        "left": "git switch <name>",
+        "right": "Move onto an existing branch"
+      },
+      {
+        "left": "git switch -c <name>",
+        "right": "Create a branch and switch to it"
+      }
+    ],
+    "explanation": "git branch lists or creates; git switch moves; switch -c creates and moves in one step.",
+    "topic": "branching-merging",
+    "lesson": "head-and-detached-head"
+  },
+  {
+    "id": "branching-merging-l07-q1",
+    "type": "single-choice",
+    "prompt": "When can Git perform a fast-forward merge?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Whenever you pass the --ff flag"
+      },
+      {
+        "id": "b",
+        "text": "When the current branch hasn't diverged, so the pointer just moves forward"
+      },
+      {
+        "id": "c",
+        "text": "Only when there is a conflict"
+      },
+      {
+        "id": "d",
+        "text": "When both branches changed the same lines"
+      }
+    ],
+    "answer": "b",
+    "explanation": "If the target branch has no commits the other lacks, Git simply advances its pointer to the tip \u2014 a fast-forward, with no merge commit.",
+    "topic": "branching-merging",
+    "lesson": "fast-forward-merges"
+  },
+  {
+    "id": "branching-merging-l07-q2",
+    "type": "single-choice",
+    "prompt": "How many parents does a merge commit have?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Zero"
+      },
+      {
+        "id": "b",
+        "text": "One"
+      },
+      {
+        "id": "c",
+        "text": "Two (or more)"
+      },
+      {
+        "id": "d",
+        "text": "It depends on the number of files changed"
+      }
+    ],
+    "answer": "c",
+    "explanation": "A merge commit records two (or more) parents \u2014 one for each branch being combined \u2014 which is what distinguishes it from an ordinary commit.",
+    "topic": "branching-merging",
+    "lesson": "three-way-merges"
+  },
+  {
+    "id": "branching-merging-l07-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about merge conflicts are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "They occur when both branches change the same lines differently"
+      },
+      {
+        "id": "b",
+        "text": "Git marks them with <<<<<<<, =======, and >>>>>>>"
+      },
+      {
+        "id": "c",
+        "text": "You resolve them, then git add and commit"
+      },
+      {
+        "id": "d",
+        "text": "Git always resolves every conflict for you automatically"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Overlapping changes cause conflicts, Git brackets the competing versions with markers, and you finish by staging and committing. Git cannot decide overlapping changes for you.",
+    "topic": "branching-merging",
+    "lesson": "merge-conflict-basics"
+  },
+  {
+    "id": "branching-merging-l07-q4",
+    "type": "fill-blank",
+    "prompt": "To cancel an in-progress merge and return to the previous state, run: git merge --______",
+    "answer": [
+      "abort"
+    ],
+    "explanation": "git merge --abort restores the repository to exactly how it was before you started the merge.",
+    "topic": "branching-merging",
+    "lesson": "aborting-and-resolving-merges"
+  },
+  {
+    "id": "branching-merging-l07-q5",
+    "type": "single-choice",
+    "prompt": "A three-way merge combines which three commits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The first, middle, and last commits of the branch"
+      },
+      {
+        "id": "b",
+        "text": "The two branch tips and their common ancestor"
+      },
+      {
+        "id": "c",
+        "text": "Three consecutive commits on main"
+      },
+      {
+        "id": "d",
+        "text": "The local, staged, and committed versions"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A three-way merge uses the two branch tips plus their common ancestor (the merge base) to work out how to combine the changes.",
+    "topic": "branching-merging",
+    "lesson": "fast-forward-merges"
+  },
+  {
+    "id": "branching-merging-l07-q6",
+    "type": "match-pair",
+    "prompt": "Match each term to its meaning.",
+    "pairs": [
+      {
+        "left": "Fast-forward",
+        "right": "Pointer moves ahead; no merge commit"
+      },
+      {
+        "left": "Three-way merge",
+        "right": "Merge commit from two tips + common ancestor"
+      },
+      {
+        "left": "Conflict markers",
+        "right": "<<<<<<< ======= >>>>>>>"
+      },
+      {
+        "left": "git merge --abort",
+        "right": "Undo an in-progress merge"
+      }
+    ],
+    "explanation": "Fast-forward avoids a merge commit, a three-way merge creates one, the markers bracket competing versions, and --abort backs out.",
+    "topic": "branching-merging",
+    "lesson": "three-way-merges"
+  },
+  {
+    "id": "remotes-collaboration-l08-q1",
+    "type": "single-choice",
+    "prompt": "What does the remote name `origin` refer to?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A special protected branch on the server"
+      },
+      {
+        "id": "b",
+        "text": "The default name Git gives the remote you cloned from"
+      },
+      {
+        "id": "c",
+        "text": "The very first commit in the repository"
+      },
+      {
+        "id": "d",
+        "text": "Your GitHub username"
+      }
+    ],
+    "answer": "b",
+    "explanation": "When you clone, Git names the source remote 'origin' by convention. It's an ordinary remote name \u2014 you can rename it or add others.",
+    "topic": "remotes-collaboration",
+    "lesson": "remote-tracking-branches"
+  },
+  {
+    "id": "remotes-collaboration-l08-q2",
+    "type": "single-choice",
+    "prompt": "What is the difference between `git fetch` and `git pull`?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They are identical"
+      },
+      {
+        "id": "b",
+        "text": "fetch uploads your commits; pull downloads them"
+      },
+      {
+        "id": "c",
+        "text": "fetch downloads without changing your branch; pull downloads and integrates into your branch"
+      },
+      {
+        "id": "d",
+        "text": "pull works offline; fetch needs a network"
+      }
+    ],
+    "answer": "c",
+    "explanation": "fetch only updates remote-tracking branches like origin/main. pull does a fetch and then merges (or rebases) those changes into your current branch.",
+    "topic": "remotes-collaboration",
+    "lesson": "git-clone-and-remotes"
+  },
+  {
+    "id": "remotes-collaboration-l08-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "git clone copies the repository's full history"
+      },
+      {
+        "id": "b",
+        "text": "git push uploads your local commits to a remote"
+      },
+      {
+        "id": "c",
+        "text": "origin/main is a remote-tracking pointer"
+      },
+      {
+        "id": "d",
+        "text": "git fetch merges remote changes into your current branch"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "clone brings the full history, push uploads commits, and origin/main tracks the remote. fetch does NOT merge \u2014 that's what pull adds.",
+    "topic": "remotes-collaboration",
+    "lesson": "fetch-vs-pull"
+  },
+  {
+    "id": "remotes-collaboration-l08-q4",
+    "type": "fill-blank",
+    "prompt": "To push a branch and set its upstream so later pushes need no arguments: git push -__ origin main",
+    "answer": [
+      "u"
+    ],
+    "explanation": "git push -u origin main sets origin/main as the upstream (tracking) branch, so a bare git push/pull works afterward.",
+    "topic": "remotes-collaboration",
+    "lesson": "git-push-and-rejections"
+  },
+  {
+    "id": "remotes-collaboration-l08-q5",
+    "type": "single-choice",
+    "prompt": "Your `git push` is rejected as non-fast-forward because the remote has commits you don't have. What's the correct next step?",
+    "options": [
+      {
+        "id": "a",
+        "text": "git push --force to overwrite the remote"
+      },
+      {
+        "id": "b",
+        "text": "Delete your branch and start over"
+      },
+      {
+        "id": "c",
+        "text": "git pull to integrate the remote's commits, then push again"
+      },
+      {
+        "id": "d",
+        "text": "Rename origin and push to the new name"
+      }
+    ],
+    "answer": "c",
+    "explanation": "The rejection protects the remote's commits. Pull to merge/rebase them into your work (resolving any conflicts), then push. Force-pushing would erase the other commits.",
+    "topic": "remotes-collaboration",
+    "lesson": "remote-tracking-branches"
+  },
+  {
+    "id": "remotes-collaboration-l08-q6",
+    "type": "match-pair",
+    "prompt": "Match each command to what it does.",
+    "pairs": [
+      {
+        "left": "git clone",
+        "right": "Copy a remote repository locally"
+      },
+      {
+        "left": "git fetch",
+        "right": "Download remote changes without merging"
+      },
+      {
+        "left": "git pull",
+        "right": "Fetch and integrate into your branch"
+      },
+      {
+        "left": "git push",
+        "right": "Upload your commits to a remote"
+      }
+    ],
+    "explanation": "clone creates the local copy, fetch downloads only, pull downloads and integrates, and push sends your commits upstream.",
+    "topic": "remotes-collaboration",
+    "lesson": "git-clone-and-remotes"
+  },
+  {
+    "id": "remotes-collaboration-l09-q1",
+    "type": "single-choice",
+    "prompt": "How is GitHub best described, relative to Git?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is the version-control tool that replaces Git"
+      },
+      {
+        "id": "b",
+        "text": "It is a service that hosts Git repositories and adds collaboration features"
+      },
+      {
+        "id": "c",
+        "text": "It is a different command-line program you install instead of Git"
+      },
+      {
+        "id": "d",
+        "text": "It is a text editor for writing commits"
+      }
+    ],
+    "answer": "b",
+    "explanation": "GitHub hosts Git repositories and layers on collaboration features (PRs, issues, reviews). Git is the underlying version-control tool.",
+    "topic": "remotes-collaboration",
+    "lesson": "connecting-github-repos"
+  },
+  {
+    "id": "remotes-collaboration-l09-q2",
+    "type": "single-choice",
+    "prompt": "Over HTTPS, what do you use to authenticate Git operations with GitHub?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Your GitHub account password"
+      },
+      {
+        "id": "b",
+        "text": "A Personal Access Token (or a credential manager that stores it)"
+      },
+      {
+        "id": "c",
+        "text": "Your email address"
+      },
+      {
+        "id": "d",
+        "text": "No authentication is needed"
+      }
+    ],
+    "answer": "b",
+    "explanation": "GitHub removed account-password authentication for Git operations in 2021. Over HTTPS you supply a Personal Access Token, often stored by a credential manager.",
+    "topic": "remotes-collaboration",
+    "lesson": "github-authentication-pat"
+  },
+  {
+    "id": "remotes-collaboration-l09-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about GitHub authentication are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "SSH authentication uses a key pair"
+      },
+      {
+        "id": "b",
+        "text": "You add the public key to GitHub, keeping the private key secret"
+      },
+      {
+        "id": "c",
+        "text": "A Personal Access Token can stand in for a password over HTTPS"
+      },
+      {
+        "id": "d",
+        "text": "You should commit your token into the repository for convenience"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "SSH uses a key pair (public on GitHub, private secret), and a PAT replaces a password over HTTPS. Committing a token exposes it \u2014 never do that.",
+    "topic": "remotes-collaboration",
+    "lesson": "github-authentication-ssh"
+  },
+  {
+    "id": "remotes-collaboration-l09-q4",
+    "type": "fill-blank",
+    "prompt": "To connect a local repository to a GitHub remote named origin, run: git remote ___ origin <url>",
+    "answer": [
+      "add"
+    ],
+    "explanation": "git remote add origin <url> registers the GitHub URL under the name origin so you can push and pull.",
+    "topic": "remotes-collaboration",
+    "lesson": "connecting-github-repos"
+  },
+  {
+    "id": "remotes-collaboration-l09-q5",
+    "type": "single-choice",
+    "prompt": "You clone over HTTPS and enter your GitHub account password when prompted, but it fails. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The repository is private"
+      },
+      {
+        "id": "b",
+        "text": "GitHub removed password authentication for Git operations; use a token or SSH"
+      },
+      {
+        "id": "c",
+        "text": "You must be on the same network as GitHub"
+      },
+      {
+        "id": "d",
+        "text": "Passwords only work for git pull, not git clone"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Since 2021, account passwords aren't accepted for Git operations. The prompt says 'Password' but expects a Personal Access Token (or use SSH keys).",
+    "topic": "remotes-collaboration",
+    "lesson": "github-authentication-pat"
+  },
+  {
+    "id": "remotes-collaboration-l09-q6",
+    "type": "match-pair",
+    "prompt": "Match each item to its role.",
+    "pairs": [
+      {
+        "left": "HTTPS + PAT",
+        "right": "Token acts as the password"
+      },
+      {
+        "left": "SSH",
+        "right": "Key pair; public key on GitHub"
+      },
+      {
+        "left": "git remote add",
+        "right": "Link a local repo to a remote"
+      },
+      {
+        "left": "git clone",
+        "right": "Download a repo and set up origin"
+      }
+    ],
+    "explanation": "A PAT authenticates HTTPS, SSH uses key pairs, remote add links a remote, and clone copies a repo while configuring origin.",
+    "topic": "remotes-collaboration",
+    "lesson": "github-authentication-ssh"
+  },
+  {
+    "id": "pull-requests-l10-q1",
+    "type": "single-choice",
+    "prompt": "What is a pull request?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A Git command that downloads changes"
+      },
+      {
+        "id": "b",
+        "text": "A GitHub feature that proposes merging one branch into another, with review and checks"
+      },
+      {
+        "id": "c",
+        "text": "A way to delete a branch"
+      },
+      {
+        "id": "d",
+        "text": "A backup of your repository"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A pull request is a GitHub feature to propose merging a branch, bundling the diff, automated checks, and a review conversation. (It is not the same as git pull.)",
+    "topic": "pull-requests",
+    "lesson": "the-github-flow"
+  },
+  {
+    "id": "pull-requests-l10-q2",
+    "type": "single-choice",
+    "prompt": "In the GitHub flow, where do you do your work?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Directly on main"
+      },
+      {
+        "id": "b",
+        "text": "On a branch off main, then open a pull request"
+      },
+      {
+        "id": "c",
+        "text": "In a separate repository each time"
+      },
+      {
+        "id": "d",
+        "text": "Only in the GitHub web editor"
+      }
+    ],
+    "answer": "b",
+    "explanation": "GitHub flow keeps main deployable: you branch off main, commit, push, and open a PR \u2014 you don't commit straight to main.",
+    "topic": "pull-requests",
+    "lesson": "opening-and-reviewing-prs"
+  },
+  {
+    "id": "pull-requests-l10-q3",
+    "type": "multiple-choice",
+    "prompt": "Which are steps in the GitHub flow? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Create a branch off main"
+      },
+      {
+        "id": "b",
+        "text": "Open a pull request to propose the merge"
+      },
+      {
+        "id": "c",
+        "text": "Review, then merge into main"
+      },
+      {
+        "id": "d",
+        "text": "Commit all changes directly to main as the normal path"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "GitHub flow is branch \u2192 commit \u2192 push \u2192 PR \u2192 review \u2192 merge \u2192 delete branch. Committing directly to main bypasses the review the flow is built around.",
+    "topic": "pull-requests",
+    "lesson": "code-review-guidelines"
+  },
+  {
+    "id": "pull-requests-l10-q4",
+    "type": "fill-blank",
+    "prompt": "GitLab's equivalent of a GitHub 'pull request' is called a ______ request.",
+    "answer": [
+      "merge"
+    ],
+    "explanation": "GitLab uses the term 'merge request' for the same concept \u2014 proposing to merge one branch into another.",
+    "topic": "pull-requests",
+    "lesson": "the-github-flow"
+  },
+  {
+    "id": "pull-requests-l10-q5",
+    "type": "single-choice",
+    "prompt": "Why are small, focused pull requests recommended?",
+    "options": [
+      {
+        "id": "a",
+        "text": "GitHub charges per line in large PRs"
+      },
+      {
+        "id": "b",
+        "text": "They are faster to review, safer to merge, and easier to revert"
+      },
+      {
+        "id": "c",
+        "text": "Large PRs cannot be merged at all"
+      },
+      {
+        "id": "d",
+        "text": "Small PRs skip code review"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Review effort grows with PR size. Small, single-purpose PRs get reviewed quickly, are less risky to merge, and are simpler to revert if needed.",
+    "topic": "pull-requests",
+    "lesson": "opening-and-reviewing-prs"
+  },
+  {
+    "id": "pull-requests-l10-q6",
+    "type": "match-pair",
+    "prompt": "Match each term to its meaning.",
+    "pairs": [
+      {
+        "left": "Pull request",
+        "right": "Propose merging a branch into another"
+      },
+      {
+        "left": "Review",
+        "right": "Approve or request changes on a PR"
+      },
+      {
+        "left": "GitHub flow",
+        "right": "Lightweight branch-based workflow"
+      },
+      {
+        "left": "main",
+        "right": "Kept always deployable"
+      }
+    ],
+    "explanation": "A PR proposes a merge, review gates it, GitHub flow is the overall workflow, and main stays deployable.",
+    "topic": "pull-requests",
+    "lesson": "code-review-guidelines"
+  },
+  {
+    "id": "pull-requests-l11-q1",
+    "type": "single-choice",
+    "prompt": "What is a fork on GitHub?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A branch inside the original repository"
+      },
+      {
+        "id": "b",
+        "text": "A server-side copy of a repository under your own account"
+      },
+      {
+        "id": "c",
+        "text": "A backup tag of a release"
+      },
+      {
+        "id": "d",
+        "text": "A merge of two repositories"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A fork is your own copy of someone else's repository on GitHub. You have push access to your fork even without access to the original.",
+    "topic": "pull-requests",
+    "lesson": "fork-and-pull-model"
+  },
+  {
+    "id": "pull-requests-l11-q2",
+    "type": "single-choice",
+    "prompt": "In the fork-and-pull model, what does the `upstream` remote point to?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Your fork"
+      },
+      {
+        "id": "b",
+        "text": "The original repository you forked from"
+      },
+      {
+        "id": "c",
+        "text": "Your local machine"
+      },
+      {
+        "id": "d",
+        "text": "A random mirror"
+      }
+    ],
+    "answer": "b",
+    "explanation": "By convention, origin is your fork and upstream is the original repository \u2014 the source you sync from and open pull requests against.",
+    "topic": "pull-requests",
+    "lesson": "syncing-upstream-forks"
+  },
+  {
+    "id": "pull-requests-l11-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about the fork-and-pull workflow are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Forking creates a copy of the repo under your account"
+      },
+      {
+        "id": "b",
+        "text": "You clone your fork, so origin points to it"
+      },
+      {
+        "id": "c",
+        "text": "You add upstream to sync with the original"
+      },
+      {
+        "id": "d",
+        "text": "You need write access to the original repo to contribute"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Forking copies the repo to your account, origin is your fork, and upstream lets you sync. You do NOT need write access to the original \u2014 that's the whole point of forking.",
+    "topic": "pull-requests",
+    "lesson": "open-source-contribution-etiquette"
+  },
+  {
+    "id": "pull-requests-l11-q4",
+    "type": "fill-blank",
+    "prompt": "To add the original repository as a remote so you can sync, run: git remote add ________ <original-url>",
+    "answer": [
+      "upstream"
+    ],
+    "explanation": "By convention the original repo is added as the remote named upstream, distinct from origin (your fork).",
+    "topic": "pull-requests",
+    "lesson": "fork-and-pull-model"
+  },
+  {
+    "id": "pull-requests-l11-q5",
+    "type": "single-choice",
+    "prompt": "Your fork's main has fallen behind the original. How do you update it?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Delete the fork and fork again"
+      },
+      {
+        "id": "b",
+        "text": "git fetch upstream, then merge (or rebase) upstream/main into your main, and push to your fork"
+      },
+      {
+        "id": "c",
+        "text": "git push --force to the upstream repository"
+      },
+      {
+        "id": "d",
+        "text": "There is no way to sync a fork"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Fetch the upstream, integrate upstream/main into your main, and push to origin (your fork). This keeps your fork current without re-forking.",
+    "topic": "pull-requests",
+    "lesson": "syncing-upstream-forks"
+  },
+  {
+    "id": "pull-requests-l11-q6",
+    "type": "match-pair",
+    "prompt": "Match each term to its role.",
+    "pairs": [
+      {
+        "left": "Fork",
+        "right": "A copy of a repo under your account"
+      },
+      {
+        "left": "origin",
+        "right": "Your fork"
+      },
+      {
+        "left": "upstream",
+        "right": "The original repository"
+      },
+      {
+        "left": "Pull request",
+        "right": "Propose your changes back to upstream"
+      }
+    ],
+    "explanation": "A fork copies the repo to your account; origin is your fork; upstream is the source; a PR proposes your work back to it.",
+    "topic": "pull-requests",
+    "lesson": "open-source-contribution-etiquette"
+  },
+  {
+    "id": "pull-requests-l12-q1",
+    "type": "single-choice",
+    "prompt": "What does 'Squash and merge' do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Combines all of the PR's commits into a single commit on the base branch"
+      },
+      {
+        "id": "b",
+        "text": "Creates a merge commit with two parents"
+      },
+      {
+        "id": "c",
+        "text": "Deletes the PR's commits without merging"
+      },
+      {
+        "id": "d",
+        "text": "Replays each commit individually onto the base"
+      }
+    ],
+    "answer": "a",
+    "explanation": "Squash and merge collapses every commit in the PR into one new commit on the base branch, keeping history linear and tidy.",
+    "topic": "pull-requests",
+    "lesson": "pr-merge-strategies"
+  },
+  {
+    "id": "pull-requests-l12-q2",
+    "type": "single-choice",
+    "prompt": "Which merge method creates a merge commit with two parents?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Squash and merge"
+      },
+      {
+        "id": "b",
+        "text": "Rebase and merge"
+      },
+      {
+        "id": "c",
+        "text": "Create a merge commit"
+      },
+      {
+        "id": "d",
+        "text": "None of them create a merge commit"
+      }
+    ],
+    "answer": "c",
+    "explanation": "The 'Create a merge commit' method adds all the branch's commits plus a two-parent merge commit. Squash and rebase both avoid a merge commit.",
+    "topic": "pull-requests",
+    "lesson": "squash-and-merge-deep-dive"
+  },
+  {
+    "id": "pull-requests-l12-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Rebase and merge produces a linear history without a merge commit"
+      },
+      {
+        "id": "b",
+        "text": "Squash and merge reduces a branch to one commit on the base"
+      },
+      {
+        "id": "c",
+        "text": "A merge commit preserves all the branch's commits and adds a merge commit"
+      },
+      {
+        "id": "d",
+        "text": "Rebase and merge keeps the branch's original commit hashes"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Rebase is linear with no merge commit, squash collapses to one commit, and the merge-commit method keeps everything plus a merge commit. Rebase rewrites commits, so the hashes change.",
+    "topic": "pull-requests",
+    "lesson": "rebase-and-merge-tradeoffs"
+  },
+  {
+    "id": "pull-requests-l12-q4",
+    "type": "fill-blank",
+    "prompt": "The merge method that reduces all of a PR's commits to a single commit is called '______ and merge'.",
+    "answer": [
+      "squash",
+      "Squash"
+    ],
+    "explanation": "Squash and merge combines the PR's commits into one commit on the base branch.",
+    "topic": "pull-requests",
+    "lesson": "pr-merge-strategies"
+  },
+  {
+    "id": "pull-requests-l12-q5",
+    "type": "single-choice",
+    "prompt": "Your PR has eight noisy 'wip'/'fix' commits, and the team wants main to read as one commit per feature. Which method fits best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Create a merge commit"
+      },
+      {
+        "id": "b",
+        "text": "Squash and merge"
+      },
+      {
+        "id": "c",
+        "text": "Rebase and merge"
+      },
+      {
+        "id": "d",
+        "text": "None \u2014 you must clean the commits by hand first"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Squash and merge collapses the eight noisy commits into a single clean commit on main \u2014 exactly the one-commit-per-feature history the team wants.",
+    "topic": "pull-requests",
+    "lesson": "squash-and-merge-deep-dive"
+  },
+  {
+    "id": "pull-requests-l12-q6",
+    "type": "match-pair",
+    "prompt": "Match each merge method to its result on the base branch.",
+    "pairs": [
+      {
+        "left": "Create a merge commit",
+        "right": "All commits plus a two-parent merge commit"
+      },
+      {
+        "left": "Squash and merge",
+        "right": "One combined commit"
+      },
+      {
+        "left": "Rebase and merge",
+        "right": "Commits replayed linearly, no merge commit"
+      },
+      {
+        "left": "Linear history",
+        "right": "History with no merge commits"
+      }
+    ],
+    "explanation": "Merge-commit keeps everything plus a merge commit; squash yields one commit; rebase replays commits with no merge commit; both squash and rebase give linear history.",
+    "topic": "pull-requests",
+    "lesson": "rebase-and-merge-tradeoffs"
+  },
+  {
+    "id": "rebasing-history-l13-q1",
+    "type": "single-choice",
+    "prompt": "What does `git rebase <base>` do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Deletes your branch's commits"
+      },
+      {
+        "id": "b",
+        "text": "Reapplies your branch's commits on top of <base> as new commits, giving a linear history"
+      },
+      {
+        "id": "c",
+        "text": "Creates a merge commit joining two branches"
+      },
+      {
+        "id": "d",
+        "text": "Uploads your branch to the remote"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Rebase replays your commits onto a new base, creating new commits (new hashes) and a straight-line history \u2014 unlike merge, which adds a merge commit.",
+    "topic": "rebasing-history",
+    "lesson": "rebase-fundamentals"
+  },
+  {
+    "id": "rebasing-history-l13-q2",
+    "type": "single-choice",
+    "prompt": "What is the Golden Rule of Rebasing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Always rebase before every commit"
+      },
+      {
+        "id": "b",
+        "text": "Never rebase commits that exist outside your repository (shared/pushed history)"
+      },
+      {
+        "id": "c",
+        "text": "Only rebase on Fridays"
+      },
+      {
+        "id": "d",
+        "text": "Rebase main into every branch daily"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Because rebasing rewrites commits, doing it to commits others may already have breaks their history. Rebase private branches; leave shared history alone.",
+    "topic": "rebasing-history",
+    "lesson": "interactive-rebase"
+  },
+  {
+    "id": "rebasing-history-l13-q3",
+    "type": "multiple-choice",
+    "prompt": "Which are things interactive rebase (git rebase -i) can do? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Squash several commits into one"
+      },
+      {
+        "id": "b",
+        "text": "Reword a commit message"
+      },
+      {
+        "id": "c",
+        "text": "Reorder or drop commits"
+      },
+      {
+        "id": "d",
+        "text": "Rewrite history while keeping all the original commit hashes"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Interactive rebase can squash, reword, reorder, edit, and drop commits \u2014 but any change rewrites the commits, so the hashes change.",
+    "topic": "rebasing-history",
+    "lesson": "golden-rule-of-rebasing"
+  },
+  {
+    "id": "rebasing-history-l13-q4",
+    "type": "fill-blank",
+    "prompt": "To start an interactive rebase of the last three commits, run: git rebase -__ HEAD~3",
+    "answer": [
+      "i"
+    ],
+    "explanation": "git rebase -i HEAD~3 opens the interactive editor listing the last three commits for you to pick/squash/reword/drop.",
+    "topic": "rebasing-history",
+    "lesson": "rebase-fundamentals"
+  },
+  {
+    "id": "rebasing-history-l13-q5",
+    "type": "single-choice",
+    "prompt": "You rebased your own feature branch that was already pushed, and now `git push` is rejected. What's the safe way to update the remote branch?",
+    "options": [
+      {
+        "id": "a",
+        "text": "git push --force (unconditionally overwrite)"
+      },
+      {
+        "id": "b",
+        "text": "git push --force-with-lease (refuses if the remote changed unexpectedly)"
+      },
+      {
+        "id": "c",
+        "text": "git pull, which will duplicate the commits"
+      },
+      {
+        "id": "d",
+        "text": "Delete the remote repository"
+      }
+    ],
+    "answer": "b",
+    "explanation": "--force-with-lease updates your rebased branch but refuses if someone else pushed new commits you haven't seen \u2014 a safer force. Use it only on your own branch, never on shared branches like main.",
+    "topic": "rebasing-history",
+    "lesson": "interactive-rebase"
+  },
+  {
+    "id": "rebasing-history-l13-q6",
+    "type": "match-pair",
+    "prompt": "Match each interactive-rebase action to its effect.",
+    "pairs": [
+      {
+        "left": "pick",
+        "right": "Keep the commit as-is"
+      },
+      {
+        "left": "squash",
+        "right": "Combine into the previous commit"
+      },
+      {
+        "left": "reword",
+        "right": "Keep the commit but change its message"
+      },
+      {
+        "left": "drop",
+        "right": "Remove the commit entirely"
+      }
+    ],
+    "explanation": "pick keeps, squash combines with the prior commit, reword edits the message, and drop deletes the commit.",
+    "topic": "rebasing-history",
+    "lesson": "golden-rule-of-rebasing"
+  },
+  {
+    "id": "conflict-resolution-l14-q1",
+    "type": "single-choice",
+    "prompt": "In a conflict, what appears between ======= and >>>>>>>?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The 'ours' side (your current branch in a merge)"
+      },
+      {
+        "id": "b",
+        "text": "The 'theirs' side (the incoming version)"
+      },
+      {
+        "id": "c",
+        "text": "A comment Git added"
+      },
+      {
+        "id": "d",
+        "text": "The common ancestor's version"
+      }
+    ],
+    "answer": "b",
+    "explanation": "The text from ======= to >>>>>>> is the 'theirs' side \u2014 the incoming branch in a merge, or your replayed commit during a rebase.",
+    "topic": "conflict-resolution",
+    "lesson": "conflict-anatomy-diff3"
+  },
+  {
+    "id": "conflict-resolution-l14-q2",
+    "type": "single-choice",
+    "prompt": "What does enabling `git rerere` do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Automatically merges any two branches"
+      },
+      {
+        "id": "b",
+        "text": "Records your conflict resolutions and replays them when the same conflict recurs"
+      },
+      {
+        "id": "c",
+        "text": "Reverts the last commit"
+      },
+      {
+        "id": "d",
+        "text": "Rebases your branch onto main"
+      }
+    ],
+    "answer": "b",
+    "explanation": "rerere ('reuse recorded resolution') remembers how you resolved a conflict and reapplies that resolution automatically the next time the identical conflict appears.",
+    "topic": "conflict-resolution",
+    "lesson": "the-rebase-reversal"
+  },
+  {
+    "id": "conflict-resolution-l14-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about resolving conflicts are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "git status lists conflicted files under 'Unmerged paths'"
+      },
+      {
+        "id": "b",
+        "text": "After resolving a file, you git add it"
+      },
+      {
+        "id": "c",
+        "text": "git merge --abort cancels a conflicted merge"
+      },
+      {
+        "id": "d",
+        "text": "It's fine to commit a file that still has conflict markers"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "status shows unmerged paths, you stage resolved files with git add, and --abort cancels. Committing leftover markers ships broken content \u2014 always remove them.",
+    "topic": "conflict-resolution",
+    "lesson": "checkout-ours-theirs"
+  },
+  {
+    "id": "conflict-resolution-l14-q4",
+    "type": "fill-blank",
+    "prompt": "After resolving all conflicts during a rebase, proceed with: git rebase --________",
+    "answer": [
+      "continue"
+    ],
+    "explanation": "git rebase --continue resumes the rebase after you've staged the resolved files (or git rebase --abort cancels it).",
+    "topic": "conflict-resolution",
+    "lesson": "git-rerere"
+  },
+  {
+    "id": "conflict-resolution-l14-q5",
+    "type": "single-choice",
+    "prompt": "During a REBASE, which side does `<<<<<<< HEAD` refer to?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Your own commit being replayed"
+      },
+      {
+        "id": "b",
+        "text": "The branch you're rebasing onto (the base)"
+      },
+      {
+        "id": "c",
+        "text": "The remote's version"
+      },
+      {
+        "id": "d",
+        "text": "The common ancestor"
+      }
+    ],
+    "answer": "b",
+    "explanation": "During a rebase, Git replays your commits onto the target, so HEAD (ours) is the base branch and 'theirs' is your commit \u2014 the reverse of a merge. Mixing this up leads to discarding the wrong side.",
+    "topic": "conflict-resolution",
+    "lesson": "conflict-anatomy-diff3"
+  },
+  {
+    "id": "conflict-resolution-l14-q6",
+    "type": "match-pair",
+    "prompt": "Match each command/idea to its effect.",
+    "pairs": [
+      {
+        "left": "git merge --abort",
+        "right": "Cancel a conflicted merge"
+      },
+      {
+        "left": "git rebase --continue",
+        "right": "Proceed after resolving conflicts"
+      },
+      {
+        "left": "git checkout --ours <file>",
+        "right": "Take your side of a file"
+      },
+      {
+        "left": "rerere",
+        "right": "Reuse a recorded conflict resolution"
+      }
+    ],
+    "explanation": "--abort cancels, --continue resumes, --ours takes your side, and rerere replays a past resolution.",
+    "topic": "conflict-resolution",
+    "lesson": "the-rebase-reversal"
+  },
+  {
+    "id": "project-management-l15-q1",
+    "type": "single-choice",
+    "prompt": "What are GitHub Issues primarily used for?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Storing the repository's source code"
+      },
+      {
+        "id": "b",
+        "text": "Tracking bugs, tasks, feature requests, and questions"
+      },
+      {
+        "id": "c",
+        "text": "Authenticating to GitHub"
+      },
+      {
+        "id": "d",
+        "text": "Running automated tests"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Issues track units of work and discussion \u2014 bugs, tasks, feature requests, questions \u2014 with labels, assignees, and milestones attached.",
+    "topic": "project-management",
+    "lesson": "github-issues-and-labels"
+  },
+  {
+    "id": "project-management-l15-q2",
+    "type": "single-choice",
+    "prompt": "Which will automatically close issue #12 when the pull request merges?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Writing 'see #12' in the description"
+      },
+      {
+        "id": "b",
+        "text": "Writing 'Fixes #12' in the PR description"
+      },
+      {
+        "id": "c",
+        "text": "Adding the 'bug' label"
+      },
+      {
+        "id": "d",
+        "text": "Assigning the issue to yourself"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A closing keyword (Fixes/Closes/Resolves) plus the issue number auto-closes the issue on merge. A bare mention like 'see #12' only creates a link.",
+    "topic": "project-management",
+    "lesson": "milestones-and-projects"
+  },
+  {
+    "id": "project-management-l15-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Labels categorize issues and pull requests"
+      },
+      {
+        "id": "b",
+        "text": "Milestones group issues toward a goal or release"
+      },
+      {
+        "id": "c",
+        "text": "Projects provide boards and tables to organize work"
+      },
+      {
+        "id": "d",
+        "text": "Only the repository owner can ever open an issue"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Labels categorize, milestones group toward goals, and Projects organize work visually. Anyone with access (and the public, on open repos) can open issues.",
+    "topic": "project-management",
+    "lesson": "linking-prs-to-issues"
+  },
+  {
+    "id": "project-management-l15-q4",
+    "type": "fill-blank",
+    "prompt": "Writing '______ #12' in a pull request will auto-close issue 12 when it merges. (give one recognized keyword)",
+    "answer": [
+      "Fixes",
+      "fixes",
+      "Closes",
+      "closes",
+      "Resolves",
+      "resolves"
+    ],
+    "explanation": "Recognized closing keywords include Fixes, Closes, and Resolves (and their variants). Any of them followed by the issue number auto-closes it on merge.",
+    "topic": "project-management",
+    "lesson": "github-issues-and-labels"
+  },
+  {
+    "id": "project-management-l15-q5",
+    "type": "single-choice",
+    "prompt": "You merged a PR that fixes a bug, but the linked issue stayed open. What's the most likely reason?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The repository is private"
+      },
+      {
+        "id": "b",
+        "text": "The PR didn't use a closing keyword to link the issue"
+      },
+      {
+        "id": "c",
+        "text": "Issues can only be closed manually"
+      },
+      {
+        "id": "d",
+        "text": "You used squash and merge"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Auto-close requires a recognized closing keyword (e.g. Fixes #N). Without one, the issue isn't closed automatically even though the fix merged.",
+    "topic": "project-management",
+    "lesson": "milestones-and-projects"
+  },
+  {
+    "id": "project-management-l15-q6",
+    "type": "match-pair",
+    "prompt": "Match each item to what it is.",
+    "pairs": [
+      {
+        "left": "Issue",
+        "right": "A tracked task, bug, or request"
+      },
+      {
+        "left": "Label",
+        "right": "A category tag"
+      },
+      {
+        "left": "Milestone",
+        "right": "A group of items toward a release"
+      },
+      {
+        "left": "Project",
+        "right": "A board/table to organize work"
+      }
+    ],
+    "explanation": "Issues are the items, labels categorize them, milestones group them toward a goal, and Projects visualize the workflow.",
+    "topic": "project-management",
+    "lesson": "linking-prs-to-issues"
+  },
+  {
+    "id": "project-management-l16-q1",
+    "type": "single-choice",
+    "prompt": "What's the difference between a lightweight and an annotated tag?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Lightweight tags move with the branch; annotated tags don't"
+      },
+      {
+        "id": "b",
+        "text": "A lightweight tag is just a name pointing at a commit; an annotated tag is a full object storing tagger, date, and message"
+      },
+      {
+        "id": "c",
+        "text": "Annotated tags can only be used on GitHub"
+      },
+      {
+        "id": "d",
+        "text": "There is no difference"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A lightweight tag is a bare pointer; an annotated tag is a full object with tagger, date, and message (and can be signed), which is why it's preferred for releases.",
+    "topic": "project-management",
+    "lesson": "lightweight-vs-annotated-tags"
+  },
+  {
+    "id": "project-management-l16-q2",
+    "type": "single-choice",
+    "prompt": "In SemVer MAJOR.MINOR.PATCH, which part increments for a backward-compatible bug fix?",
+    "options": [
+      {
+        "id": "a",
+        "text": "MAJOR"
+      },
+      {
+        "id": "b",
+        "text": "MINOR"
+      },
+      {
+        "id": "c",
+        "text": "PATCH"
+      },
+      {
+        "id": "d",
+        "text": "None \u2014 bug fixes don't change the version"
+      }
+    ],
+    "answer": "c",
+    "explanation": "A backward-compatible bug fix bumps PATCH (e.g. 1.4.2 \u2192 1.4.3). MINOR is for backward-compatible features; MAJOR is for breaking changes.",
+    "topic": "project-management",
+    "lesson": "semantic-versioning-rules"
+  },
+  {
+    "id": "project-management-l16-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Tags are not pushed by default; you push them explicitly"
+      },
+      {
+        "id": "b",
+        "text": "A GitHub Release is built on top of a Git tag"
+      },
+      {
+        "id": "c",
+        "text": "Annotated tags store a message and tagger"
+      },
+      {
+        "id": "d",
+        "text": "A MAJOR bump is for backward-compatible additions"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Tags need an explicit push, Releases anchor to tags, and annotated tags carry metadata. Backward-compatible additions bump MINOR, not MAJOR.",
+    "topic": "project-management",
+    "lesson": "github-releases-and-assets"
+  },
+  {
+    "id": "project-management-l16-q4",
+    "type": "fill-blank",
+    "prompt": "In semantic versioning, a change that breaks backward compatibility increments the ______ number.",
+    "answer": [
+      "MAJOR",
+      "major",
+      "Major"
+    ],
+    "explanation": "Breaking, incompatible changes bump the MAJOR version (e.g. 1.4.2 \u2192 2.0.0).",
+    "topic": "project-management",
+    "lesson": "lightweight-vs-annotated-tags"
+  },
+  {
+    "id": "project-management-l16-q5",
+    "type": "single-choice",
+    "prompt": "A project is at 1.4.2. You add a new feature that doesn't break existing usage. What should the next version be?",
+    "options": [
+      {
+        "id": "a",
+        "text": "1.4.3"
+      },
+      {
+        "id": "b",
+        "text": "1.5.0"
+      },
+      {
+        "id": "c",
+        "text": "2.0.0"
+      },
+      {
+        "id": "d",
+        "text": "1.4.2 (no change)"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A new backward-compatible feature bumps MINOR and resets PATCH to 0: 1.4.2 \u2192 1.5.0.",
+    "topic": "project-management",
+    "lesson": "semantic-versioning-rules"
+  },
+  {
+    "id": "project-management-l16-q6",
+    "type": "match-pair",
+    "prompt": "Match each item to its description.",
+    "pairs": [
+      {
+        "left": "Lightweight tag",
+        "right": "A plain pointer to a commit"
+      },
+      {
+        "left": "Annotated tag",
+        "right": "Full object with tagger and message"
+      },
+      {
+        "left": "GitHub Release",
+        "right": "A tag plus notes and assets"
+      },
+      {
+        "left": "SemVer MAJOR",
+        "right": "Incremented for breaking changes"
+      }
+    ],
+    "explanation": "Lightweight is a bare pointer, annotated carries metadata, a Release adds notes/assets to a tag, and MAJOR marks breaking changes.",
+    "topic": "project-management",
+    "lesson": "github-releases-and-assets"
+  },
+  {
+    "id": "undoing-changes-l17-q1",
+    "type": "single-choice",
+    "prompt": "What does `git stash` do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Permanently deletes your uncommitted changes"
+      },
+      {
+        "id": "b",
+        "text": "Saves your uncommitted changes on a stack and restores a clean working tree"
+      },
+      {
+        "id": "c",
+        "text": "Commits your changes to the current branch"
+      },
+      {
+        "id": "d",
+        "text": "Pushes your changes to the remote"
+      }
+    ],
+    "answer": "b",
+    "explanation": "git stash shelves your uncommitted changes onto a stack and gives you a clean working tree, so you can switch context and reapply them later.",
+    "topic": "undoing-changes",
+    "lesson": "git-stash"
+  },
+  {
+    "id": "undoing-changes-l17-q2",
+    "type": "single-choice",
+    "prompt": "What does `git cherry-pick <commit>` do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Merges the entire branch containing that commit"
+      },
+      {
+        "id": "b",
+        "text": "Applies that single commit's changes onto your current branch as a new commit"
+      },
+      {
+        "id": "c",
+        "text": "Deletes that commit from history"
+      },
+      {
+        "id": "d",
+        "text": "Tags that commit"
+      }
+    ],
+    "answer": "b",
+    "explanation": "cherry-pick copies the changes introduced by one specific commit onto your current branch, creating a new commit with a new hash.",
+    "topic": "undoing-changes",
+    "lesson": "git-cherry-pick"
+  },
+  {
+    "id": "undoing-changes-l17-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about the reflog are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "It records where HEAD and branches have pointed over time"
+      },
+      {
+        "id": "b",
+        "text": "It is local to your machine"
+      },
+      {
+        "id": "c",
+        "text": "It can help you recover a commit after a mistaken reset --hard"
+      },
+      {
+        "id": "d",
+        "text": "It is stored on the remote server"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "The reflog is a local log of HEAD/branch movements that enables recovery of unreachable commits. It is never pushed to the remote.",
+    "topic": "undoing-changes",
+    "lesson": "git-reflog"
+  },
+  {
+    "id": "undoing-changes-l17-q4",
+    "type": "fill-blank",
+    "prompt": "To reapply the most recent stash and remove it from the stack, run: git stash ____",
+    "answer": [
+      "pop"
+    ],
+    "explanation": "git stash pop reapplies the latest stash and drops it from the stack (git stash apply reapplies but keeps it).",
+    "topic": "undoing-changes",
+    "lesson": "git-stash"
+  },
+  {
+    "id": "undoing-changes-l17-q5",
+    "type": "single-choice",
+    "prompt": "You ran `git reset --hard` and lost a commit you needed. How can you get it back?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It's impossible; the commit is gone forever"
+      },
+      {
+        "id": "b",
+        "text": "Find its hash in git reflog and restore it (e.g. git reset --hard HEAD@{1})"
+      },
+      {
+        "id": "c",
+        "text": "Run git pull to download it from the remote"
+      },
+      {
+        "id": "d",
+        "text": "Reinstall Git"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A committed change remains referenced in the reflog even after reset --hard. Locate it in git reflog and reset or branch to that hash to recover it.",
+    "topic": "undoing-changes",
+    "lesson": "git-cherry-pick"
+  },
+  {
+    "id": "undoing-changes-l17-q6",
+    "type": "match-pair",
+    "prompt": "Match each command to what it does.",
+    "pairs": [
+      {
+        "left": "git stash",
+        "right": "Shelve uncommitted changes"
+      },
+      {
+        "left": "git cherry-pick",
+        "right": "Copy one commit onto the current branch"
+      },
+      {
+        "left": "git reflog",
+        "right": "Show the history of HEAD moves for recovery"
+      },
+      {
+        "left": "git stash pop",
+        "right": "Reapply a stash and drop it"
+      }
+    ],
+    "explanation": "stash shelves work, cherry-pick copies a commit, reflog aids recovery, and stash pop restores then removes the stash.",
+    "topic": "undoing-changes",
+    "lesson": "git-reflog"
+  },
+  {
+    "id": "rebasing-history-l18-q1",
+    "type": "single-choice",
+    "prompt": "Rewriting history always does what to the affected commits?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Keeps their original hashes"
+      },
+      {
+        "id": "b",
+        "text": "Gives them new hashes (creates new commits)"
+      },
+      {
+        "id": "c",
+        "text": "Uploads them to the remote automatically"
+      },
+      {
+        "id": "d",
+        "text": "Converts them to tags"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Amend, rebase, squash, and bulk tools all produce new commits with new hashes. That's precisely why rewriting shared history is disruptive.",
+    "topic": "rebasing-history",
+    "lesson": "rewriting-history-implications"
+  },
+  {
+    "id": "rebasing-history-l18-q2",
+    "type": "single-choice",
+    "prompt": "Which force-push is safer, and why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "--force, because it always succeeds"
+      },
+      {
+        "id": "b",
+        "text": "--force-with-lease, because it aborts if the remote has commits you haven't seen"
+      },
+      {
+        "id": "c",
+        "text": "They are identical"
+      },
+      {
+        "id": "d",
+        "text": "--force-with-lease, because it never rewrites anything"
+      }
+    ],
+    "answer": "b",
+    "explanation": "--force-with-lease refuses the push if the remote advanced unexpectedly, protecting a teammate's commits from being clobbered \u2014 unlike unconditional --force.",
+    "topic": "rebasing-history",
+    "lesson": "force-with-lease"
+  },
+  {
+    "id": "rebasing-history-l18-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "amend, rebase, and squash all rewrite history"
+      },
+      {
+        "id": "b",
+        "text": "git filter-repo is recommended over git filter-branch for bulk rewrites"
+      },
+      {
+        "id": "c",
+        "text": "You should only rewrite history that hasn't been shared, unless you coordinate"
+      },
+      {
+        "id": "d",
+        "text": "Removing a leaked secret from history means you no longer need to rotate it"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Those rewrite commits, filter-repo is the recommended bulk tool, and unshared-only is the safe rule. A leaked secret must still be rotated \u2014 the rewrite can't recall existing copies.",
+    "topic": "rebasing-history",
+    "lesson": "removing-sensitive-data"
+  },
+  {
+    "id": "rebasing-history-l18-q4",
+    "type": "fill-blank",
+    "prompt": "The safer force-push that refuses if the remote moved unexpectedly is: git push --force-with-______",
+    "answer": [
+      "lease"
+    ],
+    "explanation": "git push --force-with-lease checks that the remote ref is where you last saw it before overwriting, avoiding clobbering unseen commits.",
+    "topic": "rebasing-history",
+    "lesson": "rewriting-history-implications"
+  },
+  {
+    "id": "rebasing-history-l18-q5",
+    "type": "single-choice",
+    "prompt": "You purged a leaked API key from all history and force-pushed. Is the key safe now?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Yes, it's completely gone"
+      },
+      {
+        "id": "b",
+        "text": "No \u2014 treat it as compromised and rotate it, since copies may persist in clones, forks, and caches"
+      },
+      {
+        "id": "c",
+        "text": "Yes, as long as the repo is private"
+      },
+      {
+        "id": "d",
+        "text": "Only if you also deleted the branch"
+      }
+    ],
+    "answer": "b",
+    "explanation": "History rewriting reduces future exposure but can't recall copies that already exist. The leaked key must be rotated (revoked and replaced) to be safe.",
+    "topic": "rebasing-history",
+    "lesson": "force-with-lease"
+  },
+  {
+    "id": "rebasing-history-l18-q6",
+    "type": "match-pair",
+    "prompt": "Match each tool to its scope.",
+    "pairs": [
+      {
+        "left": "git commit --amend",
+        "right": "Rewrite the last commit"
+      },
+      {
+        "left": "git rebase -i",
+        "right": "Rewrite a range of recent commits"
+      },
+      {
+        "left": "git filter-repo",
+        "right": "Rewrite the entire history in bulk"
+      },
+      {
+        "left": "--force-with-lease",
+        "right": "A safer force push"
+      }
+    ],
+    "explanation": "amend touches the last commit, rebase -i a range, filter-repo all of history, and --force-with-lease updates a rewritten branch safely.",
+    "topic": "rebasing-history",
+    "lesson": "removing-sensitive-data"
+  },
+  {
+    "id": "debugging-large-repos-l19-q1",
+    "type": "single-choice",
+    "prompt": "What does `git bisect` do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Splits a commit into two"
+      },
+      {
+        "id": "b",
+        "text": "Binary-searches history to find the commit that introduced a bug"
+      },
+      {
+        "id": "c",
+        "text": "Deletes half of your history"
+      },
+      {
+        "id": "d",
+        "text": "Merges two branches at their midpoint"
+      }
+    ],
+    "answer": "b",
+    "explanation": "git bisect does a binary search between a known-good and a known-bad commit, halving the range each step to pinpoint the first bad commit.",
+    "topic": "debugging-large-repos",
+    "lesson": "git-bisect-hunt"
+  },
+  {
+    "id": "debugging-large-repos-l19-q2",
+    "type": "single-choice",
+    "prompt": "What does `git blame` show?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The person responsible for every bug"
+      },
+      {
+        "id": "b",
+        "text": "For each line, the commit, author, and date that last modified it"
+      },
+      {
+        "id": "c",
+        "text": "A list of all branches"
+      },
+      {
+        "id": "d",
+        "text": "The diff between two tags"
+      }
+    ],
+    "answer": "b",
+    "explanation": "git blame annotates each line with the commit/author/date that last changed it \u2014 useful context, though the last change may just be a reformat, not the logic's author.",
+    "topic": "debugging-large-repos",
+    "lesson": "automated-bisect-scripts"
+  },
+  {
+    "id": "debugging-large-repos-l19-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "bisect uses good/bad marks to narrow the search"
+      },
+      {
+        "id": "b",
+        "text": "git bisect run can automate the search with a test script"
+      },
+      {
+        "id": "c",
+        "text": "git log -S finds commits that added or removed a given string"
+      },
+      {
+        "id": "d",
+        "text": "git blame reliably identifies who is at fault for a bug"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "bisect narrows via good/bad, bisect run automates it, and log -S (the pickaxe) finds where a string changed. blame shows the last change, not fault for logic.",
+    "topic": "debugging-large-repos",
+    "lesson": "git-blame-and-log-search"
+  },
+  {
+    "id": "debugging-large-repos-l19-q4",
+    "type": "fill-blank",
+    "prompt": "To let Git automatically run your test at each bisect step, use: git bisect ___ ./test.sh",
+    "answer": [
+      "run"
+    ],
+    "explanation": "git bisect run <script> drives the whole search automatically, using the script's exit code (0 = good, non-zero = bad).",
+    "topic": "debugging-large-repos",
+    "lesson": "git-bisect-hunt"
+  },
+  {
+    "id": "debugging-large-repos-l19-q5",
+    "type": "single-choice",
+    "prompt": "You have ~500 commits between a known-good release and a broken HEAD, plus a script that detects the bug. What's the fastest way to find the culprit commit?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Read every commit diff by hand"
+      },
+      {
+        "id": "b",
+        "text": "git bisect (ideally with bisect run), which finds it in about log2(500) \u2248 9 steps"
+      },
+      {
+        "id": "c",
+        "text": "git blame the whole repository"
+      },
+      {
+        "id": "d",
+        "text": "Revert commits one by one from HEAD"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Binary search checks a midpoint each step, so ~500 commits take only about 9 tests. bisect run automates it with your script.",
+    "topic": "debugging-large-repos",
+    "lesson": "automated-bisect-scripts"
+  },
+  {
+    "id": "debugging-large-repos-l19-q6",
+    "type": "match-pair",
+    "prompt": "Match each tool to its purpose.",
+    "pairs": [
+      {
+        "left": "git bisect",
+        "right": "Binary-search for the bad commit"
+      },
+      {
+        "left": "git blame",
+        "right": "Show the last change per line"
+      },
+      {
+        "left": "git log -S",
+        "right": "Find when a string was added/removed"
+      },
+      {
+        "left": "git bisect run",
+        "right": "Automate bisect with a test"
+      }
+    ],
+    "explanation": "bisect locates the bad commit, blame annotates lines, log -S traces a string's history, and bisect run automates the search.",
+    "topic": "debugging-large-repos",
+    "lesson": "git-blame-and-log-search"
+  },
+  {
+    "id": "debugging-large-repos-l20-q1",
+    "type": "single-choice",
+    "prompt": "What does a submodule record in the parent repository?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A full copy of the other repository's files"
+      },
+      {
+        "id": "b",
+        "text": "A link to another repository at a specific commit (URL + pinned commit)"
+      },
+      {
+        "id": "c",
+        "text": "Only the other repo's latest branch name"
+      },
+      {
+        "id": "d",
+        "text": "Nothing \u2014 submodules are just folders"
+      }
+    ],
+    "answer": "b",
+    "explanation": "The parent stores the submodule's URL (in .gitmodules) and a pointer to a specific commit \u2014 not the submodule's actual contents.",
+    "topic": "debugging-large-repos",
+    "lesson": "git-submodules"
+  },
+  {
+    "id": "debugging-large-repos-l20-q2",
+    "type": "single-choice",
+    "prompt": "What does Git LFS do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Compresses your entire repository"
+      },
+      {
+        "id": "b",
+        "text": "Replaces large files with small pointer files, storing the content on a separate LFS server"
+      },
+      {
+        "id": "c",
+        "text": "Encrypts large files"
+      },
+      {
+        "id": "d",
+        "text": "Deletes large files from the working tree"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Git LFS commits a tiny pointer in place of each large file and keeps the real bytes on an LFS server, so the Git repo stays small and fast.",
+    "topic": "debugging-large-repos",
+    "lesson": "submodule-pitfalls-and-workflows"
+  },
+  {
+    "id": "debugging-large-repos-l20-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "git clone --recurse-submodules fetches submodule contents"
+      },
+      {
+        "id": "b",
+        "text": "A submodule is pinned to a specific commit"
+      },
+      {
+        "id": "c",
+        "text": "Git LFS keeps large binaries out of the main repo history via pointers"
+      },
+      {
+        "id": "d",
+        "text": "Submodules automatically update to the latest upstream commit"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Recursive clone fetches submodule contents, submodules are pinned to a commit, and LFS uses pointers. Submodules do NOT auto-update \u2014 you bump and commit the new pointer yourself.",
+    "topic": "debugging-large-repos",
+    "lesson": "git-lfs"
+  },
+  {
+    "id": "debugging-large-repos-l20-q4",
+    "type": "fill-blank",
+    "prompt": "To clone a repository and fetch its submodules in one step: git clone --recurse-__________ <url>",
+    "answer": [
+      "submodules"
+    ],
+    "explanation": "git clone --recurse-submodules clones the repo and checks out each submodule at its pinned commit.",
+    "topic": "debugging-large-repos",
+    "lesson": "git-submodules"
+  },
+  {
+    "id": "debugging-large-repos-l20-q5",
+    "type": "single-choice",
+    "prompt": "You cloned a project and its `libs/` submodule folder is empty. Why?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The submodule was deleted upstream"
+      },
+      {
+        "id": "b",
+        "text": "You cloned without --recurse-submodules (or didn't run git submodule update --init)"
+      },
+      {
+        "id": "c",
+        "text": "Submodules can't be cloned at all"
+      },
+      {
+        "id": "d",
+        "text": "The folder is hidden"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A plain clone brings only the pointer to the submodule commit, not its files. Use --recurse-submodules or git submodule update --init --recursive to populate it.",
+    "topic": "debugging-large-repos",
+    "lesson": "submodule-pitfalls-and-workflows"
+  },
+  {
+    "id": "debugging-large-repos-l20-q6",
+    "type": "match-pair",
+    "prompt": "Match each item to its role.",
+    "pairs": [
+      {
+        "left": "Submodule",
+        "right": "A repo pinned inside another at a commit"
+      },
+      {
+        "left": ".gitmodules",
+        "right": "Records submodule paths and URLs"
+      },
+      {
+        "left": "Git LFS",
+        "right": "Pointer files for large binaries"
+      },
+      {
+        "left": "git lfs track",
+        "right": "Set which file patterns LFS manages"
+      }
+    ],
+    "explanation": "A submodule pins a nested repo, .gitmodules records it, LFS stores large files as pointers, and git lfs track configures the patterns.",
+    "topic": "debugging-large-repos",
+    "lesson": "git-lfs"
+  },
+  {
+    "id": "internals-l21-q1",
+    "type": "single-choice",
+    "prompt": "What are Git's four object types?",
+    "options": [
+      {
+        "id": "a",
+        "text": "branch, tag, remote, stash"
+      },
+      {
+        "id": "b",
+        "text": "blob, tree, commit, tag"
+      },
+      {
+        "id": "c",
+        "text": "file, folder, snapshot, diff"
+      },
+      {
+        "id": "d",
+        "text": "head, index, ref, pack"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Git's object store holds blobs (file contents), trees (directory listings), commits (snapshots + metadata), and tags.",
+    "topic": "internals",
+    "lesson": "content-addressed-store"
+  },
+  {
+    "id": "internals-l21-q2",
+    "type": "single-choice",
+    "prompt": "What does a blob object store?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A directory listing with filenames"
+      },
+      {
+        "id": "b",
+        "text": "The raw contents of a file (just the bytes, no filename)"
+      },
+      {
+        "id": "c",
+        "text": "A commit's author and message"
+      },
+      {
+        "id": "d",
+        "text": "A pointer to the current branch"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A blob holds only a file's content. Filenames and structure are recorded in tree objects, not blobs.",
+    "topic": "internals",
+    "lesson": "the-four-object-types"
+  },
+  {
+    "id": "internals-l21-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about Git internals are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A tree records filenames and points to blobs and other trees"
+      },
+      {
+        "id": "b",
+        "text": "A commit points to a tree and to its parent commit(s)"
+      },
+      {
+        "id": "c",
+        "text": "Objects are addressed by a hash of their content"
+      },
+      {
+        "id": "d",
+        "text": "A branch is a heavyweight copy of all its commits"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Trees hold structure, commits point to a tree and parents, and objects are content-addressed. A branch is just a pointer (ref) to one commit.",
+    "topic": "internals",
+    "lesson": "refs-and-symbolic-refs"
+  },
+  {
+    "id": "internals-l21-q4",
+    "type": "fill-blank",
+    "prompt": "Git's default object hash function is SHA-__.",
+    "answer": [
+      "1"
+    ],
+    "explanation": "SHA-1 is the default (a 40-character hex hash). Git also supports SHA-256 as an opt-in format, but SHA-1 remains the default.",
+    "topic": "internals",
+    "lesson": "the-commit-dag"
+  },
+  {
+    "id": "internals-l21-q5",
+    "type": "single-choice",
+    "prompt": "At the file level, what is HEAD?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The first commit in the repository"
+      },
+      {
+        "id": "b",
+        "text": "A symbolic ref pointing to the current branch (e.g. ref: refs/heads/main)"
+      },
+      {
+        "id": "c",
+        "text": "A copy of the staging area"
+      },
+      {
+        "id": "d",
+        "text": "The remote's default branch"
+      }
+    ],
+    "answer": "b",
+    "explanation": "HEAD is normally a symbolic ref that points to your current branch, which is how Git knows where new commits should go.",
+    "topic": "internals",
+    "lesson": "content-addressed-store"
+  },
+  {
+    "id": "internals-l21-q6",
+    "type": "match-pair",
+    "prompt": "Match each object/ref to what it represents.",
+    "pairs": [
+      {
+        "left": "blob",
+        "right": "A file's contents"
+      },
+      {
+        "left": "tree",
+        "right": "A directory: names to blobs/trees"
+      },
+      {
+        "left": "commit",
+        "right": "A tree plus parent(s) and metadata"
+      },
+      {
+        "left": "branch",
+        "right": "A name pointing to a commit"
+      }
+    ],
+    "explanation": "Blobs hold content, trees hold structure, commits snapshot a tree with ancestry, and a branch is a ref pointing at a commit.",
+    "topic": "internals",
+    "lesson": "the-four-object-types"
+  },
+  {
+    "id": "ci-workflows-l22-q1",
+    "type": "single-choice",
+    "prompt": "Where do GitHub Actions workflow files live?",
+    "options": [
+      {
+        "id": "a",
+        "text": "In the repository root, named actions.yml"
+      },
+      {
+        "id": "b",
+        "text": "In the .github/workflows/ directory, as YAML files"
+      },
+      {
+        "id": "c",
+        "text": "In a separate GitHub Actions repository"
+      },
+      {
+        "id": "d",
+        "text": "Inside the .git directory"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Workflows are YAML files placed under .github/workflows/ in the repository.",
+    "topic": "ci-workflows",
+    "lesson": "github-actions-fundamentals"
+  },
+  {
+    "id": "ci-workflows-l22-q2",
+    "type": "single-choice",
+    "prompt": "What causes a workflow to run?",
+    "options": [
+      {
+        "id": "a",
+        "text": "An event declared under `on:` (e.g. push or pull_request)"
+      },
+      {
+        "id": "b",
+        "text": "Saving any file locally"
+      },
+      {
+        "id": "c",
+        "text": "Opening the Actions tab"
+      },
+      {
+        "id": "d",
+        "text": "Running git status"
+      }
+    ],
+    "answer": "a",
+    "explanation": "A workflow's `on:` section lists the events that trigger it \u2014 push, pull_request, schedule, workflow_dispatch, and so on.",
+    "topic": "ci-workflows",
+    "lesson": "actions-ci-pipeline"
+  },
+  {
+    "id": "ci-workflows-l22-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements about GitHub Actions are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "A workflow contains jobs"
+      },
+      {
+        "id": "b",
+        "text": "A job runs on a runner and contains steps"
+      },
+      {
+        "id": "c",
+        "text": "A step can run a command or use an action"
+      },
+      {
+        "id": "d",
+        "text": "Jobs always run sequentially by default"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Workflows have jobs, jobs run on runners with steps, and steps run commands or use actions. Jobs run in PARALLEL by default; use needs: to order them.",
+    "topic": "ci-workflows",
+    "lesson": "workflow-secrets-and-caching"
+  },
+  {
+    "id": "ci-workflows-l22-q4",
+    "type": "fill-blank",
+    "prompt": "In a workflow step, you reference a prebuilt action with the `____:` keyword.",
+    "answer": [
+      "uses"
+    ],
+    "explanation": "A step uses an action via `uses:` (e.g. uses: actions/checkout@v4), or runs a shell command via `run:`.",
+    "topic": "ci-workflows",
+    "lesson": "github-actions-fundamentals"
+  },
+  {
+    "id": "ci-workflows-l22-q5",
+    "type": "single-choice",
+    "prompt": "Your CI job runs tests that fail with 'no such file', and the job has no checkout step. What's missing?",
+    "options": [
+      {
+        "id": "a",
+        "text": "A second runner"
+      },
+      {
+        "id": "b",
+        "text": "The actions/checkout step \u2014 the runner has none of your code until you check it out"
+      },
+      {
+        "id": "c",
+        "text": "A git commit"
+      },
+      {
+        "id": "d",
+        "text": "A personal access token"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A runner starts empty. Without actions/checkout, the repository's files aren't present, so the tests can't find anything to run.",
+    "topic": "ci-workflows",
+    "lesson": "actions-ci-pipeline"
+  },
+  {
+    "id": "ci-workflows-l22-q6",
+    "type": "match-pair",
+    "prompt": "Match each Actions concept to its meaning.",
+    "pairs": [
+      {
+        "left": "Workflow",
+        "right": "An automated process in .github/workflows"
+      },
+      {
+        "left": "Event",
+        "right": "What triggers a workflow (on:)"
+      },
+      {
+        "left": "Job",
+        "right": "Runs on a runner and holds steps"
+      },
+      {
+        "left": "Step",
+        "right": "A command (run) or an action (uses)"
+      }
+    ],
+    "explanation": "A workflow is triggered by an event, contains jobs that run on runners, and each job's steps run commands or use actions.",
+    "topic": "ci-workflows",
+    "lesson": "workflow-secrets-and-caching"
+  },
+  {
+    "id": "ci-workflows-l23-q1",
+    "type": "single-choice",
+    "prompt": "What do branch protection rules do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Encrypt the branch"
+      },
+      {
+        "id": "b",
+        "text": "Enforce conditions before changes reach a branch (e.g. require a PR, approvals, passing checks) on the server, so contributors can't bypass them"
+      },
+      {
+        "id": "c",
+        "text": "Automatically write tests for you"
+      },
+      {
+        "id": "d",
+        "text": "Make the branch read-only to everyone forever"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Branch protection is a server-side gate: it can require pull requests, reviews, and passing status checks, and block force-pushes \u2014 rules contributors cannot skip.",
+    "topic": "ci-workflows",
+    "lesson": "branch-protection-rules"
+  },
+  {
+    "id": "ci-workflows-l23-q2",
+    "type": "single-choice",
+    "prompt": "When does a pre-commit hook run?",
+    "options": [
+      {
+        "id": "a",
+        "text": "On the server after a push"
+      },
+      {
+        "id": "b",
+        "text": "Locally, before a commit is created \u2014 and it can abort the commit"
+      },
+      {
+        "id": "c",
+        "text": "Only when merging a pull request"
+      },
+      {
+        "id": "d",
+        "text": "Once per day automatically"
+      }
+    ],
+    "answer": "b",
+    "explanation": "A pre-commit hook runs on your machine just before the commit is created; if it exits non-zero (e.g. lint fails), the commit is aborted.",
+    "topic": "ci-workflows",
+    "lesson": "codeowners"
+  },
+  {
+    "id": "ci-workflows-l23-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Branch protection can require passing status checks before merge"
+      },
+      {
+        "id": "b",
+        "text": "A CODEOWNERS file can require review from specific owners"
+      },
+      {
+        "id": "c",
+        "text": "Client-side hooks can be bypassed with --no-verify"
+      },
+      {
+        "id": "d",
+        "text": "Client-side hooks are automatically shared with everyone who clones"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Branch protection can require green checks, CODEOWNERS routes required reviews, and hooks can be skipped with --no-verify. Hooks in .git/hooks are local and NOT shared by cloning.",
+    "topic": "ci-workflows",
+    "lesson": "git-hooks"
+  },
+  {
+    "id": "ci-workflows-l23-q4",
+    "type": "fill-blank",
+    "prompt": "A ______ file maps paths to the people whose review is required for changes there.",
+    "answer": [
+      "CODEOWNERS",
+      "codeowners"
+    ],
+    "explanation": "A CODEOWNERS file assigns owners to file paths, so PRs touching those paths require the owners' review.",
+    "topic": "ci-workflows",
+    "lesson": "branch-protection-rules"
+  },
+  {
+    "id": "ci-workflows-l23-q5",
+    "type": "single-choice",
+    "prompt": "Why are client-side pre-commit hooks NOT a reliable enforcement mechanism?",
+    "options": [
+      {
+        "id": "a",
+        "text": "They only run on Windows"
+      },
+      {
+        "id": "b",
+        "text": "They are local, not shared by default, and can be skipped with --no-verify"
+      },
+      {
+        "id": "c",
+        "text": "They require a paid GitHub plan"
+      },
+      {
+        "id": "d",
+        "text": "They delete your commits"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Hooks live locally, don't travel with a clone unless installed, and can be bypassed with --no-verify. True enforcement needs server-side branch protection and required CI.",
+    "topic": "ci-workflows",
+    "lesson": "codeowners"
+  },
+  {
+    "id": "ci-workflows-l23-q6",
+    "type": "match-pair",
+    "prompt": "Match each mechanism to what it is.",
+    "pairs": [
+      {
+        "left": "Branch protection",
+        "right": "Server-side rules guarding a branch"
+      },
+      {
+        "left": "Required reviews",
+        "right": "PRs need approvals before merge"
+      },
+      {
+        "left": "CODEOWNERS",
+        "right": "Maps paths to required reviewers"
+      },
+      {
+        "left": "pre-commit hook",
+        "right": "Local script run before a commit"
+      }
+    ],
+    "explanation": "Branch protection enforces server-side, required reviews gate merges, CODEOWNERS routes reviewers, and a pre-commit hook gives local pre-commit feedback.",
+    "topic": "ci-workflows",
+    "lesson": "git-hooks"
+  },
+  {
+    "id": "ci-workflows-l24-q1",
+    "type": "single-choice",
+    "prompt": "What characterizes GitHub Flow?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Long-lived main and develop branches plus release branches"
+      },
+      {
+        "id": "b",
+        "text": "A single, always-deployable main plus short-lived feature branches merged via pull requests"
+      },
+      {
+        "id": "c",
+        "text": "No branches at all \u2014 everyone commits to their own repo"
+      },
+      {
+        "id": "d",
+        "text": "A separate repository per feature"
+      }
+    ],
+    "answer": "b",
+    "explanation": "GitHub Flow is lightweight: keep main always deployable, do work on short-lived branches, and merge via reviewed pull requests.",
+    "topic": "ci-workflows",
+    "lesson": "branching-strategies-compared"
+  },
+  {
+    "id": "ci-workflows-l24-q2",
+    "type": "single-choice",
+    "prompt": "What is trunk-based development?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Everyone works on long-lived branches for weeks before merging"
+      },
+      {
+        "id": "b",
+        "text": "Everyone integrates into a single trunk frequently, using very short-lived branches (often behind feature flags)"
+      },
+      {
+        "id": "c",
+        "text": "A model that forbids automated testing"
+      },
+      {
+        "id": "d",
+        "text": "A GitHub-only feature for large files"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Trunk-based development keeps a single trunk (main) and integrates changes frequently via tiny short-lived branches, using feature flags to hide unfinished work \u2014 backed by strong CI.",
+    "topic": "ci-workflows",
+    "lesson": "conventional-commits"
+  },
+  {
+    "id": "ci-workflows-l24-q3",
+    "type": "multiple-choice",
+    "prompt": "Which statements are true? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "Git Flow uses long-lived main and develop branches plus feature/release/hotfix branches"
+      },
+      {
+        "id": "b",
+        "text": "GitHub Flow keeps main always deployable"
+      },
+      {
+        "id": "c",
+        "text": "Conventional Commits is a commit-message convention (feat:, fix:, ...)"
+      },
+      {
+        "id": "d",
+        "text": "Trunk-based development relies on long-lived feature branches"
+      }
+    ],
+    "answer": [
+      "a",
+      "b",
+      "c"
+    ],
+    "explanation": "Git Flow is the structured model, GitHub Flow keeps main deployable, and Conventional Commits standardizes messages. Trunk-based development uses SHORT-lived branches with frequent integration, not long-lived ones.",
+    "topic": "ci-workflows",
+    "lesson": "feature-lifecycle-capstone"
+  },
+  {
+    "id": "ci-workflows-l24-q4",
+    "type": "fill-blank",
+    "prompt": "The commit-message convention that uses prefixes like feat: and fix: is called ______ Commits.",
+    "answer": [
+      "Conventional",
+      "conventional"
+    ],
+    "explanation": "Conventional Commits standardizes messages as type(scope): description, enabling automated changelogs and SemVer bumps.",
+    "topic": "ci-workflows",
+    "lesson": "branching-strategies-compared"
+  },
+  {
+    "id": "ci-workflows-l24-q5",
+    "type": "single-choice",
+    "prompt": "A simple web app deploys continuously, many times a day. Which workflow fits best?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Full Git Flow, for its release and develop branches"
+      },
+      {
+        "id": "b",
+        "text": "GitHub Flow or trunk-based development \u2014 lightweight and continuous"
+      },
+      {
+        "id": "c",
+        "text": "No workflow at all"
+      },
+      {
+        "id": "d",
+        "text": "A separate long-lived branch per developer"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Continuous delivery favors lightweight workflows (GitHub Flow or trunk-based). Full Git Flow's develop/release/hotfix structure is overkill for an app that deploys continuously.",
+    "topic": "ci-workflows",
+    "lesson": "conventional-commits"
+  },
+  {
+    "id": "ci-workflows-l24-q6",
+    "type": "match-pair",
+    "prompt": "Match each workflow/convention to its description.",
+    "pairs": [
+      {
+        "left": "Git Flow",
+        "right": "Structured branches for scheduled releases"
+      },
+      {
+        "left": "GitHub Flow",
+        "right": "Lightweight main + short-lived branches via PRs"
+      },
+      {
+        "left": "Trunk-based",
+        "right": "Frequent integration into one trunk"
+      },
+      {
+        "left": "Conventional Commits",
+        "right": "Standardized commit messages"
+      }
+    ],
+    "explanation": "Git Flow is structured, GitHub Flow is lightweight, trunk-based integrates continuously, and Conventional Commits standardizes messages.",
+    "topic": "ci-workflows",
+    "lesson": "feature-lifecycle-capstone"
+  },
+  {
+    "id": "conflict-resolution-extra-q1",
+    "topic": "conflict-resolution",
+    "lesson": "conflict-anatomy-diff3",
+    "type": "single-choice",
+    "prompt": "What additional information does Git's `diff3` conflict style show compared to the default conflict style?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The commit message of the offending commit"
+      },
+      {
+        "id": "b",
+        "text": "The common ancestor (base) version of the conflicted lines"
+      },
+      {
+        "id": "c",
+        "text": "The name of the branch author who introduced the change"
+      },
+      {
+        "id": "d",
+        "text": "The diff between your local index and the remote repository"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Setting merge.conflictstyle to diff3 displays a middle section (`||||||| base`) with the common ancestor text, showing what the code looked like before either branch modified it."
+  },
+  {
+    "id": "conflict-resolution-extra-q2",
+    "topic": "conflict-resolution",
+    "lesson": "checkout-ours-theirs",
+    "type": "multiple-choice",
+    "prompt": "When resolving a merge conflict on an image or compiled asset where text merging is impossible, which commands let you choose an entire file version? Select all that apply.",
+    "options": [
+      {
+        "id": "a",
+        "text": "git checkout --ours <path>"
+      },
+      {
+        "id": "b",
+        "text": "git checkout --theirs <path>"
+      },
+      {
+        "id": "c",
+        "text": "git reset --hard <path>"
+      },
+      {
+        "id": "d",
+        "text": "git merge --discard <path>"
+      }
+    ],
+    "answer": [
+      "a",
+      "b"
+    ],
+    "explanation": "Using `git checkout --ours <path>` or `git checkout --theirs <path>` replaces the conflicted working-tree file entirely with one branch's version, after which you stage it with `git add`."
+  },
+  {
+    "id": "conflict-resolution-extra-q3",
+    "topic": "conflict-resolution",
+    "lesson": "git-rerere",
+    "type": "single-choice",
+    "prompt": "What does Git's `rerere` feature stand for and do?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Recursive Remote Rebase; it rebases nested submodules"
+      },
+      {
+        "id": "b",
+        "text": "Reuse Recorded Resolution; it remembers how you resolved a hunk and reapplies it automatically"
+      },
+      {
+        "id": "c",
+        "text": "Reverse Remote Reset; it undoes a remote push on GitHub"
+      },
+      {
+        "id": "d",
+        "text": "Re-evaluate Redundant Edits; it eliminates duplicate commits"
+      }
+    ],
+    "answer": "b",
+    "explanation": "rerere stands for 'reuse recorded resolution'. When enabled, Git saves snapshots of conflicted hunks and their manual resolutions, auto-resolving identical conflicts in future merges or rebases."
+  },
+  {
+    "id": "conflict-resolution-extra-q4",
+    "topic": "conflict-resolution",
+    "lesson": "the-rebase-reversal",
+    "type": "single-choice",
+    "prompt": "Why is the meaning of 'ours' and 'theirs' reversed during `git rebase` compared to `git merge`?",
+    "options": [
+      {
+        "id": "a",
+        "text": "It is a bug in Git that was retained for backward compatibility"
+      },
+      {
+        "id": "b",
+        "text": "Because rebase checks out the upstream target branch first, making it HEAD ('ours'), and replays your commits ('theirs') onto it"
+      },
+      {
+        "id": "c",
+        "text": "Because git rebase operates in reverse chronological order"
+      },
+      {
+        "id": "d",
+        "text": "Because GitHub's pull request interface inverts branch references"
+      }
+    ],
+    "answer": "b",
+    "explanation": "During a rebase, Git temporarily switches HEAD to the upstream target branch you are rebasing onto. Therefore, HEAD ('ours') is the upstream branch, and the incoming commit being replayed is 'theirs'."
+  },
+  {
+    "id": "internals-extra-q1",
+    "topic": "internals",
+    "lesson": "content-addressed-store",
+    "type": "single-choice",
+    "prompt": "How does Git calculate the SHA-1 hash for an object in its object store?",
+    "options": [
+      {
+        "id": "a",
+        "text": "By hashing the file path and file modification timestamp"
+      },
+      {
+        "id": "b",
+        "text": "By hashing a header ('type content-length\\0') concatenated with the raw payload bytes"
+      },
+      {
+        "id": "c",
+        "text": "By hashing the commit author and commit message"
+      },
+      {
+        "id": "d",
+        "text": "By hashing the diff between the previous version and current version"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Git hashes a header containing the object type (blob, tree, commit, tag), a space, the byte length, a null byte (`\\0`), and then the exact object payload. This makes hashing content-deterministic."
+  },
+  {
+    "id": "internals-extra-q2",
+    "topic": "internals",
+    "lesson": "the-four-object-types",
+    "type": "match-pair",
+    "prompt": "Match each Git object type to its role in the internal store.",
+    "pairs": [
+      {
+        "left": "Blob",
+        "right": "Stores pure file contents with no filename or permissions"
+      },
+      {
+        "left": "Tree",
+        "right": "Represents directory state with filenames, modes, and child object hashes"
+      },
+      {
+        "left": "Commit",
+        "right": "Points to a root tree, parent commits, author, committer, and message"
+      },
+      {
+        "left": "Annotated Tag",
+        "right": "Permanent reference with its own message, author, and optional GPG signature"
+      }
+    ],
+    "explanation": "The four objects in Git are blobs (file bytes), trees (directory listings mapping names to blob/tree hashes), commits (snapshots linking root trees to parents with metadata), and tag objects."
+  },
+  {
+    "id": "internals-extra-q3",
+    "topic": "internals",
+    "lesson": "refs-and-symbolic-refs",
+    "type": "single-choice",
+    "prompt": "What is the content of the `.git/HEAD` file when you are on branch `main`?",
+    "options": [
+      {
+        "id": "a",
+        "text": "The 40-character SHA-1 hash of the latest commit on main"
+      },
+      {
+        "id": "b",
+        "text": "A symbolic reference containing `ref: refs/heads/main`"
+      },
+      {
+        "id": "c",
+        "text": "The full path to the project root directory"
+      },
+      {
+        "id": "d",
+        "text": "A JSON object holding branch configuration"
+      }
+    ],
+    "answer": "b",
+    "explanation": "When not in a detached HEAD state, `.git/HEAD` contains a symbolic ref string like `ref: refs/heads/main`, pointing Git to the branch ref file under `refs/heads/`."
+  },
+  {
+    "id": "internals-extra-q4",
+    "topic": "internals",
+    "lesson": "the-commit-dag",
+    "type": "single-choice",
+    "prompt": "Why is Git's commit history described as a Directed Acyclic Graph (DAG)?",
+    "options": [
+      {
+        "id": "a",
+        "text": "Because commits point forward in time towards future releases"
+      },
+      {
+        "id": "b",
+        "text": "Because each commit points backwards to its parent(s) and history can never loop back onto itself"
+      },
+      {
+        "id": "c",
+        "text": "Because all branches must eventually merge into a single trunk"
+      },
+      {
+        "id": "d",
+        "text": "Because trees and blobs form cyclical dependencies"
+      }
+    ],
+    "answer": "b",
+    "explanation": "Commits have directed parent pointers pointing back in time. Because each commit hash incorporates its parents' hashes, it is mathematically impossible for a commit to be its own ancestor (no cycles)."
+  }
+]

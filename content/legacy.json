@@ -1,0 +1,252 @@
+[
+  {
+    "id": "lesson-01",
+    "slug": "what-is-version-control",
+    "title": "What Is Version Control?",
+    "lessons": [
+      "version-control-models",
+      "snapshots-vs-diffs",
+      "git-design-philosophy",
+      "git-vs-github"
+    ]
+  },
+  {
+    "id": "lesson-02",
+    "slug": "installing-and-configuring-git",
+    "title": "Installing & Configuring Git",
+    "lessons": [
+      "installing-git",
+      "git-user-identity",
+      "configuration-scopes",
+      "essential-git-settings"
+    ]
+  },
+  {
+    "id": "lesson-03",
+    "slug": "the-three-states-and-your-first-commit",
+    "title": "The Three States & Your First Commit",
+    "lessons": [
+      "three-areas-three-states",
+      "initializing-a-repository",
+      "staging-with-git-add",
+      "creating-snapshots-git-commit"
+    ]
+  },
+  {
+    "id": "lesson-04",
+    "slug": "viewing-and-ignoring-history",
+    "title": "Viewing & Ignoring History",
+    "lessons": [
+      "inspecting-history-git-log",
+      "formatting-and-filtering-logs",
+      "comparing-changes-git-diff",
+      "ignoring-files-gitignore"
+    ]
+  },
+  {
+    "id": "lesson-05",
+    "slug": "undoing-things",
+    "title": "Undoing Things",
+    "lessons": [
+      "amending-commits",
+      "restoring-files",
+      "git-reset-modes",
+      "reverting-shared-commits"
+    ]
+  },
+  {
+    "id": "lesson-06",
+    "slug": "branching-basics",
+    "title": "Branching Basics",
+    "lessons": [
+      "branches-as-pointers",
+      "head-and-detached-head",
+      "branch-operations",
+      "branch-navigation-best-practices"
+    ]
+  },
+  {
+    "id": "lesson-07",
+    "slug": "merging-and-conflicts",
+    "title": "Merging & Conflicts",
+    "lessons": [
+      "fast-forward-merges",
+      "three-way-merges",
+      "merge-conflict-basics",
+      "aborting-and-resolving-merges"
+    ]
+  },
+  {
+    "id": "lesson-08",
+    "slug": "working-with-remotes",
+    "title": "Working with Remotes",
+    "lessons": [
+      "remote-tracking-branches",
+      "git-clone-and-remotes",
+      "fetch-vs-pull",
+      "git-push-and-rejections"
+    ]
+  },
+  {
+    "id": "lesson-09",
+    "slug": "meet-github-repositories-and-authentication",
+    "title": "Meet GitHub: Repositories & Authentication",
+    "lessons": [
+      "connecting-github-repos",
+      "github-authentication-pat",
+      "github-authentication-ssh"
+    ]
+  },
+  {
+    "id": "lesson-10",
+    "slug": "the-github-flow-branches-and-pull-requests",
+    "title": "The GitHub Flow: Branches & Pull Requests",
+    "lessons": [
+      "the-github-flow",
+      "opening-and-reviewing-prs",
+      "code-review-guidelines"
+    ]
+  },
+  {
+    "id": "lesson-11",
+    "slug": "forking-and-contributing-to-open-source",
+    "title": "Forking & Contributing to Open Source",
+    "lessons": [
+      "fork-and-pull-model",
+      "syncing-upstream-forks",
+      "open-source-contribution-etiquette"
+    ]
+  },
+  {
+    "id": "lesson-12",
+    "slug": "pr-merge-strategies-merge-squash-and-rebase",
+    "title": "PR Merge Strategies: Merge, Squash & Rebase",
+    "lessons": [
+      "pr-merge-strategies",
+      "squash-and-merge-deep-dive",
+      "rebase-and-merge-tradeoffs"
+    ]
+  },
+  {
+    "id": "lesson-13",
+    "slug": "rebasing",
+    "title": "Rebasing",
+    "lessons": [
+      "rebase-fundamentals",
+      "interactive-rebase",
+      "golden-rule-of-rebasing"
+    ]
+  },
+  {
+    "id": "lesson-14",
+    "slug": "resolving-conflicts-in-depth",
+    "title": "Resolving Conflicts in Depth",
+    "lessons": [
+      "conflict-anatomy-diff3",
+      "the-rebase-reversal",
+      "checkout-ours-theirs",
+      "git-rerere"
+    ]
+  },
+  {
+    "id": "lesson-15",
+    "slug": "issues-labels-milestones-and-projects",
+    "title": "Issues, Labels, Milestones & Projects",
+    "lessons": [
+      "github-issues-and-labels",
+      "milestones-and-projects",
+      "linking-prs-to-issues"
+    ]
+  },
+  {
+    "id": "lesson-16",
+    "slug": "tags-releases-and-semantic-versioning",
+    "title": "Tags, Releases & Semantic Versioning",
+    "lessons": [
+      "lightweight-vs-annotated-tags",
+      "semantic-versioning-rules",
+      "github-releases-and-assets"
+    ]
+  },
+  {
+    "id": "lesson-17",
+    "slug": "stash-cherry-pick-and-reflog",
+    "title": "Stash, Cherry-pick & Reflog",
+    "lessons": [
+      "git-stash",
+      "git-cherry-pick",
+      "git-reflog"
+    ]
+  },
+  {
+    "id": "lesson-18",
+    "slug": "rewriting-history-safely",
+    "title": "Rewriting History Safely",
+    "lessons": [
+      "rewriting-history-implications",
+      "force-with-lease",
+      "removing-sensitive-data"
+    ]
+  },
+  {
+    "id": "lesson-19",
+    "slug": "debugging-history-bisect-and-blame",
+    "title": "Debugging History: bisect & blame",
+    "lessons": [
+      "git-bisect-hunt",
+      "automated-bisect-scripts",
+      "git-blame-and-log-search"
+    ]
+  },
+  {
+    "id": "lesson-20",
+    "slug": "submodules-and-git-lfs",
+    "title": "Submodules & Git LFS",
+    "lessons": [
+      "git-submodules",
+      "submodule-pitfalls-and-workflows",
+      "git-lfs"
+    ]
+  },
+  {
+    "id": "lesson-21",
+    "slug": "git-internals-objects-refs-and-the-dag",
+    "title": "Git Internals: Objects, Refs & the DAG",
+    "lessons": [
+      "content-addressed-store",
+      "the-four-object-types",
+      "refs-and-symbolic-refs",
+      "the-commit-dag"
+    ]
+  },
+  {
+    "id": "lesson-22",
+    "slug": "github-actions-ci-basics",
+    "title": "GitHub Actions: CI Basics",
+    "lessons": [
+      "github-actions-fundamentals",
+      "actions-ci-pipeline",
+      "workflow-secrets-and-caching"
+    ]
+  },
+  {
+    "id": "lesson-23",
+    "slug": "guarding-main-branch-protection-reviews-and-hooks",
+    "title": "Guarding main: Branch Protection, Reviews & Hooks",
+    "lessons": [
+      "branch-protection-rules",
+      "codeowners",
+      "git-hooks"
+    ]
+  },
+  {
+    "id": "lesson-24",
+    "slug": "team-workflows-capstone",
+    "title": "Team Workflows — Capstone",
+    "lessons": [
+      "branching-strategies-compared",
+      "conventional-commits",
+      "feature-lifecycle-capstone"
+    ]
+  }
+]

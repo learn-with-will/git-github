@@ -1,0 +1,60 @@
+{
+  "$schema": "https://raw.githubusercontent.com/learn-with-will/course-shell/main/course.schema.json",
+  "id": "git-github",
+  "name": "Git & GitHub Learn",
+  "subject": "Git & GitHub",
+  "description": "Learn Git and GitHub in five-minute bites: version control basics, branching, merging, pull requests, rebasing, recovery, Git internals, and GitHub Actions.",
+  "brand": {
+    "color": "#db3d1e",
+    "scale": {
+      "50": "#fff3f0",
+      "100": "#ffe4dc",
+      "200": "#ffc9ba",
+      "300": "#fca188",
+      "400": "#f7754f",
+      "500": "#f05032",
+      "600": "#db3d1e",
+      "700": "#b52f16",
+      "800": "#902715",
+      "900": "#762315",
+      "950": "#3f0f08"
+    },
+    "gradient": ["#db3d1e", "#f05032", "#f59e0b"],
+    "gradientDark": ["#f7754f", "#f05032", "#fbbf24"]
+  },
+  "home": {
+    "badge": "Grounded in Pro Git & GitHub Docs",
+    "headline": [
+      "Master Git & GitHub in ",
+      "five-minute bites",
+      "."
+    ],
+    "searchExamples": [
+      "rebase",
+      "cherry-pick",
+      "merge conflict"
+    ],
+    "featuredLesson": "version-control-models",
+    "featuredCode": {
+      "lang": "bash",
+      "code": "# Safely push rewritten history\ngit push --force-with-lease origin feature\n\n# Inspect HEAD movement history\ngit reflog"
+    },
+    "quizPreview": {
+      "topic": "foundations",
+      "prompt": "Which statement best describes the relationship between Git and GitHub?",
+      "options": [
+        "They are two names for the same program",
+        "Git is a local version-control tool; GitHub is an online service that hosts repositories",
+        "Git cannot run unless you have a GitHub account"
+      ],
+      "selected": 1
+    }
+  },
+  "codeLanguages": [
+    "bash",
+    "diff",
+    "yaml",
+    "ini",
+    "json"
+  ]
+}

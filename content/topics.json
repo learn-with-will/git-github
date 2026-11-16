@@ -1,0 +1,74 @@
+[
+  {
+    "id": "foundations",
+    "title": "Foundations & Configuration",
+    "blurb": "Understand version control models, snapshots, Git vs GitHub, installation, identity, and configuration scopes.",
+    "order": 1
+  },
+  {
+    "id": "basics-workflow",
+    "title": "Worktree, Staging & History",
+    "blurb": "Master the three states, the staging area, creating commits, reading logs, and ignoring files.",
+    "order": 2
+  },
+  {
+    "id": "undoing-changes",
+    "title": "Undoing & Recovering Work",
+    "blurb": "Amend commits, restore files, reset pointers, revert shared commits, and recover with the reflog.",
+    "order": 3
+  },
+  {
+    "id": "branching-merging",
+    "title": "Branching & Merging",
+    "blurb": "Understand movable pointers, switching branches, fast-forward merges, and three-way merge commits.",
+    "order": 4
+  },
+  {
+    "id": "remotes-collaboration",
+    "title": "Remotes & GitHub Basics",
+    "blurb": "Connect remote repositories, master fetch, pull, and push, and authenticate with GitHub via PAT and SSH.",
+    "order": 5
+  },
+  {
+    "id": "pull-requests",
+    "title": "Pull Requests & Open Source",
+    "blurb": "Practice the GitHub Flow, collaborate through Pull Requests, and contribute to upstream open source.",
+    "order": 6
+  },
+  {
+    "id": "rebasing-history",
+    "title": "Rebasing & History Curation",
+    "blurb": "Maintain clean linear histories, reword and squash with interactive rebase, and rewrite commits safely.",
+    "order": 7
+  },
+  {
+    "id": "conflict-resolution",
+    "title": "Advanced Conflict Resolution",
+    "blurb": "Resolve complex merge conflicts, understand the rebase reversal, use merge tools, and automate with rerere.",
+    "order": 8
+  },
+  {
+    "id": "project-management",
+    "title": "Issues, Releases & SemVer",
+    "blurb": "Organize work with GitHub Issues, Milestones, and Projects, and release with annotated tags and SemVer.",
+    "order": 9
+  },
+  {
+    "id": "debugging-large-repos",
+    "title": "Debugging & Repository Hygiene",
+    "blurb": "Find regressions with bisect, inspect changes with blame and pickaxe, and manage submodules and Git LFS.",
+    "order": 10
+  },
+  {
+    "id": "internals",
+    "title": "Git Internals & Architecture",
+    "blurb": "Explore the content-addressed object store, blobs, trees, commits, annotated tags, refs, and the commit DAG.",
+    "order": 11
+  },
+  {
+    "id": "ci-workflows",
+    "title": "CI/CD & Team Workflows",
+    "blurb": "Automate testing with GitHub Actions, protect branches with rulesets, and implement team branching models.",
+    "order": 12
+  }
+]
